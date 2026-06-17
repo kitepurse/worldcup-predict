@@ -118,46 +118,36 @@ def _save(key, data):
         json.dump(data, f, ensure_ascii=False, default=str)
 
 
-# 全局 API 调用计数器（免费套餐限10次/分钟）
-_api_calls = 0
-_api_last_reset = time.time()
+# 全局限速：免费套餐 10次/分钟 → 每次调用间隔 7 秒
+_last_api_call = 0
 
 def _api(path, timeout=15):
-    global _api_calls, _api_last_reset
+    global _last_api_call
     api_key = _get_api_key()
     if not api_key:
         return None
 
-    # 速率限制：免费10次/分钟→每次调用至少间隔6秒
-    now = time.time()
-    if now - _api_last_reset > 60:
-        _api_calls = 0
-        _api_last_reset = now
-    if _api_calls >= 8:
-        time.sleep(62)  # 等到下一分钟
-        _api_calls = 0
-        _api_last_reset = time.time()
-    else:
-        time.sleep(1.5)  # 调用间短延迟
-    _api_calls += 1
+    # 始终保持至少7秒间隔（10次/分 = 6秒/次，留余量）
+    elapsed = time.time() - _last_api_call
+    if elapsed < 7:
+        time.sleep(7 - elapsed)
+    _last_api_call = time.time()
 
     url = f"{API_BASE}/{path}"
     req = Request(url, headers={"X-Auth-Token": api_key})
-    for attempt in range(3):
+    for attempt in range(2):
         try:
             resp = urlopen(req, timeout=timeout)
             data = json.loads(resp.read())
             return data
         except HTTPError as e:
             if e.code == 429:
-                time.sleep(65)  # 被限了等65秒
-                _api_calls = 0
-                _api_last_reset = time.time()
+                time.sleep(65)
                 continue
             return None
         except Exception:
-            if attempt < 2:
-                time.sleep(5)
+            if attempt < 1:
+                time.sleep(2)
     return None
 
 
@@ -329,7 +319,7 @@ def _scrape_team_api(team_name):
             team_id = tid
             break
     if team_id:
-        matches_data = _api(f"teams/{team_id}/matches?competitions=WC&limit=10", timeout=45)
+        matches_data = _api(f"teams/{team_id}/matches?competitions=WC&limit=10", timeout=20)
         if matches_data and "matches" in matches_data:
             return _count_matches(matches_data["matches"], team_name)
     return None
