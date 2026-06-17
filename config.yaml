@@ -1,0 +1,29 @@
+# 世界杯比分预测系统配置文件
+api:
+  deepseek:
+    key: "${DEEPSEEK_API_KEY}"
+    url: "https://api.deepseek.com/anthropic/v1/messages"
+    model: "deepseek-v4-pro"
+  football_data:
+    key: "${FOOTBALL_DATA_KEY}"
+    url: "https://api.football-data.org/v4"
+  api_football:
+    key: "${API_FOOTBALL_KEY}"
+    url: "https://v3.football.api-sports.io"
+
+email:
+  smtp_host: "smtp.qq.com"
+  smtp_port: 465
+  user: "${SMTP_USER}"
+  pass: "${SMTP_PASS}"
+  to: "55283064@qq.com"
+
+data:
+  cache_dir: "data/cache"
+  predictions_dir: "data/predictions"
+  results_dir: "data/results"
+  cache_ttl_hours: 6
+
+worldcup:
+  start_date: "2026-06-11"
+  end_date: "2026-07-19"

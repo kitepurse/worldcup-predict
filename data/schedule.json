@@ -1,0 +1,616 @@
+{
+  "updated": "2026-06-15T16:00:00",
+  "source": "fifa_official_web_search",
+  "matches": {
+    "2026-06-12": [
+      {
+        "home": "Mexico",
+        "away": "South Africa",
+        "home_cn": "墨西哥",
+        "away_cn": "南非",
+        "time_bj": "03:00",
+        "group": "A组第1轮"
+      },
+      {
+        "home": "South Korea",
+        "away": "Czech Republic",
+        "home_cn": "韩国",
+        "away_cn": "捷克",
+        "time_bj": "10:00",
+        "group": "A组第1轮"
+      }
+    ],
+    "2026-06-13": [
+      {
+        "home": "Canada",
+        "away": "Bosnia",
+        "home_cn": "加拿大",
+        "away_cn": "波黑",
+        "time_bj": "03:00",
+        "group": "B组第1轮"
+      },
+      {
+        "home": "USA",
+        "away": "Paraguay",
+        "home_cn": "美国",
+        "away_cn": "巴拉圭",
+        "time_bj": "09:00",
+        "group": "D组第1轮"
+      }
+    ],
+    "2026-06-14": [
+      {
+        "home": "Qatar",
+        "away": "Switzerland",
+        "home_cn": "卡塔尔",
+        "away_cn": "瑞士",
+        "time_bj": "03:00",
+        "group": "B组第1轮"
+      },
+      {
+        "home": "Brazil",
+        "away": "Morocco",
+        "home_cn": "巴西",
+        "away_cn": "摩洛哥",
+        "time_bj": "06:00",
+        "group": "C组第1轮"
+      },
+      {
+        "home": "Haiti",
+        "away": "Scotland",
+        "home_cn": "海地",
+        "away_cn": "苏格兰",
+        "time_bj": "09:00",
+        "group": "C组第1轮"
+      },
+      {
+        "home": "Australia",
+        "away": "Turkey",
+        "home_cn": "澳大利亚",
+        "away_cn": "土耳其",
+        "time_bj": "12:00",
+        "group": "D组第1轮"
+      }
+    ],
+    "2026-06-15": [
+      {
+        "home": "Germany",
+        "away": "Curacao",
+        "home_cn": "德国",
+        "away_cn": "库拉索",
+        "time_bj": "01:00",
+        "group": "E组第1轮"
+      },
+      {
+        "home": "Netherlands",
+        "away": "Japan",
+        "home_cn": "荷兰",
+        "away_cn": "日本",
+        "time_bj": "04:00",
+        "group": "F组第1轮"
+      },
+      {
+        "home": "Ivory Coast",
+        "away": "Ecuador",
+        "home_cn": "科特迪瓦",
+        "away_cn": "厄瓜多尔",
+        "time_bj": "07:00",
+        "group": "E组第1轮"
+      },
+      {
+        "home": "Sweden",
+        "away": "Tunisia",
+        "home_cn": "瑞典",
+        "away_cn": "突尼斯",
+        "time_bj": "10:00",
+        "group": "F组第1轮"
+      }
+    ],
+    "2026-06-16": [
+      {
+        "home": "Spain",
+        "away": "Cape Verde Islands",
+        "home_cn": "西班牙",
+        "away_cn": "佛得角",
+        "time_bj": "00:00",
+        "group": "H组第1轮"
+      },
+      {
+        "home": "Belgium",
+        "away": "Egypt",
+        "home_cn": "比利时",
+        "away_cn": "埃及",
+        "time_bj": "03:00",
+        "group": "G组第1轮"
+      },
+      {
+        "home": "Saudi Arabia",
+        "away": "Uruguay",
+        "home_cn": "沙特阿拉伯",
+        "away_cn": "乌拉圭",
+        "time_bj": "06:00",
+        "group": "H组第1轮"
+      },
+      {
+        "home": "Iran",
+        "away": "New Zealand",
+        "home_cn": "伊朗",
+        "away_cn": "新西兰",
+        "time_bj": "09:00",
+        "group": "G组第1轮"
+      }
+    ],
+    "2026-06-17": [
+      {
+        "home": "France",
+        "away": "Senegal",
+        "home_cn": "法国",
+        "away_cn": "塞内加尔",
+        "time_bj": "03:00",
+        "group": "I组第1轮"
+      },
+      {
+        "home": "Iraq",
+        "away": "Norway",
+        "home_cn": "伊拉克",
+        "away_cn": "挪威",
+        "time_bj": "06:00",
+        "group": "I组第1轮"
+      },
+      {
+        "home": "Argentina",
+        "away": "Algeria",
+        "home_cn": "阿根廷",
+        "away_cn": "阿尔及利亚",
+        "time_bj": "09:00",
+        "group": "J组第1轮"
+      },
+      {
+        "home": "Austria",
+        "away": "Jordan",
+        "home_cn": "奥地利",
+        "away_cn": "约旦",
+        "time_bj": "12:00",
+        "group": "J组第1轮"
+      }
+    ],
+    "2026-06-18": [
+      {
+        "home": "Portugal",
+        "away": "Congo DR",
+        "home_cn": "葡萄牙",
+        "away_cn": "民主刚果",
+        "time_bj": "01:00",
+        "group": "K组第1轮"
+      },
+      {
+        "home": "England",
+        "away": "Croatia",
+        "home_cn": "英格兰",
+        "away_cn": "克罗地亚",
+        "time_bj": "04:00",
+        "group": "L组第1轮"
+      },
+      {
+        "home": "Ghana",
+        "away": "Panama",
+        "home_cn": "加纳",
+        "away_cn": "巴拿马",
+        "time_bj": "07:00",
+        "group": "L组第1轮"
+      },
+      {
+        "home": "Uzbekistan",
+        "away": "Colombia",
+        "home_cn": "乌兹别克斯坦",
+        "away_cn": "哥伦比亚",
+        "time_bj": "10:00",
+        "group": "K组第1轮"
+      }
+    ],
+    "2026-06-19": [
+      {
+        "home": "Czech Republic",
+        "away": "South Africa",
+        "home_cn": "捷克",
+        "away_cn": "南非",
+        "time_bj": "00:00",
+        "group": "A组第1轮"
+      },
+      {
+        "home": "Switzerland",
+        "away": "Bosnia",
+        "home_cn": "瑞士",
+        "away_cn": "波黑",
+        "time_bj": "03:00",
+        "group": "B组第1轮"
+      },
+      {
+        "home": "Canada",
+        "away": "Qatar",
+        "home_cn": "加拿大",
+        "away_cn": "卡塔尔",
+        "time_bj": "06:00",
+        "group": "B组第1轮"
+      },
+      {
+        "home": "Mexico",
+        "away": "South Korea",
+        "home_cn": "墨西哥",
+        "away_cn": "韩国",
+        "time_bj": "09:00",
+        "group": "A组第1轮"
+      }
+    ],
+    "2026-06-20": [
+      {
+        "home": "USA",
+        "away": "Australia",
+        "home_cn": "美国",
+        "away_cn": "澳大利亚",
+        "time_bj": "03:00",
+        "group": "D组第1轮"
+      },
+      {
+        "home": "Scotland",
+        "away": "Morocco",
+        "home_cn": "苏格兰",
+        "away_cn": "摩洛哥",
+        "time_bj": "06:00",
+        "group": "C组第1轮"
+      },
+      {
+        "home": "Brazil",
+        "away": "Haiti",
+        "home_cn": "巴西",
+        "away_cn": "海地",
+        "time_bj": "09:00",
+        "group": "C组第1轮"
+      },
+      {
+        "home": "Turkey",
+        "away": "Paraguay",
+        "home_cn": "土耳其",
+        "away_cn": "巴拉圭",
+        "time_bj": "12:00",
+        "group": "D组第1轮"
+      }
+    ],
+    "2026-06-21": [
+      {
+        "home": "Netherlands",
+        "away": "Sweden",
+        "home_cn": "荷兰",
+        "away_cn": "瑞典",
+        "time_bj": "01:00",
+        "group": "F组第1轮"
+      },
+      {
+        "home": "Germany",
+        "away": "Ivory Coast",
+        "home_cn": "德国",
+        "away_cn": "科特迪瓦",
+        "time_bj": "04:00",
+        "group": "E组第1轮"
+      },
+      {
+        "home": "Ecuador",
+        "away": "Curacao",
+        "home_cn": "厄瓜多尔",
+        "away_cn": "库拉索",
+        "time_bj": "08:00",
+        "group": "E组第1轮"
+      },
+      {
+        "home": "Tunisia",
+        "away": "Japan",
+        "home_cn": "突尼斯",
+        "away_cn": "日本",
+        "time_bj": "12:00",
+        "group": "F组第1轮"
+      }
+    ],
+    "2026-06-22": [
+      {
+        "home": "Spain",
+        "away": "Saudi Arabia",
+        "home_cn": "西班牙",
+        "away_cn": "沙特阿拉伯",
+        "time_bj": "00:00",
+        "group": "H组第1轮"
+      },
+      {
+        "home": "Belgium",
+        "away": "Iran",
+        "home_cn": "比利时",
+        "away_cn": "伊朗",
+        "time_bj": "03:00",
+        "group": "G组第1轮"
+      },
+      {
+        "home": "Uruguay",
+        "away": "Cape Verde Islands",
+        "home_cn": "乌拉圭",
+        "away_cn": "佛得角",
+        "time_bj": "06:00",
+        "group": "H组第1轮"
+      },
+      {
+        "home": "New Zealand",
+        "away": "Egypt",
+        "home_cn": "新西兰",
+        "away_cn": "埃及",
+        "time_bj": "09:00",
+        "group": "G组第1轮"
+      }
+    ],
+    "2026-06-23": [
+      {
+        "home": "Argentina",
+        "away": "Austria",
+        "home_cn": "阿根廷",
+        "away_cn": "奥地利",
+        "time_bj": "01:00",
+        "group": "J组第1轮"
+      },
+      {
+        "home": "France",
+        "away": "Iraq",
+        "home_cn": "法国",
+        "away_cn": "伊拉克",
+        "time_bj": "05:00",
+        "group": "I组第1轮"
+      },
+      {
+        "home": "Norway",
+        "away": "Senegal",
+        "home_cn": "挪威",
+        "away_cn": "塞内加尔",
+        "time_bj": "08:00",
+        "group": "I组第1轮"
+      },
+      {
+        "home": "Jordan",
+        "away": "Algeria",
+        "home_cn": "约旦",
+        "away_cn": "阿尔及利亚",
+        "time_bj": "11:00",
+        "group": "J组第1轮"
+      }
+    ],
+    "2026-06-24": [
+      {
+        "home": "Portugal",
+        "away": "Uzbekistan",
+        "home_cn": "葡萄牙",
+        "away_cn": "乌兹别克斯坦",
+        "time_bj": "01:00",
+        "group": "K组第1轮"
+      },
+      {
+        "home": "England",
+        "away": "Ghana",
+        "home_cn": "英格兰",
+        "away_cn": "加纳",
+        "time_bj": "04:00",
+        "group": "L组第1轮"
+      },
+      {
+        "home": "Panama",
+        "away": "Croatia",
+        "home_cn": "巴拿马",
+        "away_cn": "克罗地亚",
+        "time_bj": "07:00",
+        "group": "L组第1轮"
+      },
+      {
+        "home": "Colombia",
+        "away": "Congo DR",
+        "home_cn": "哥伦比亚",
+        "away_cn": "民主刚果",
+        "time_bj": "10:00",
+        "group": "K组第1轮"
+      }
+    ],
+    "2026-06-25": [
+      {
+        "home": "Switzerland",
+        "away": "Canada",
+        "home_cn": "瑞士",
+        "away_cn": "加拿大",
+        "time_bj": "03:00",
+        "group": "B组第1轮"
+      },
+      {
+        "home": "Bosnia",
+        "away": "Qatar",
+        "home_cn": "波黑",
+        "away_cn": "卡塔尔",
+        "time_bj": "03:00",
+        "group": "B组第1轮"
+      },
+      {
+        "home": "Scotland",
+        "away": "Brazil",
+        "home_cn": "苏格兰",
+        "away_cn": "巴西",
+        "time_bj": "06:00",
+        "group": "C组第1轮"
+      },
+      {
+        "home": "Morocco",
+        "away": "Haiti",
+        "home_cn": "摩洛哥",
+        "away_cn": "海地",
+        "time_bj": "06:00",
+        "group": "C组第1轮"
+      },
+      {
+        "home": "Czech Republic",
+        "away": "Mexico",
+        "home_cn": "捷克",
+        "away_cn": "墨西哥",
+        "time_bj": "09:00",
+        "group": "A组第1轮"
+      },
+      {
+        "home": "South Africa",
+        "away": "South Korea",
+        "home_cn": "南非",
+        "away_cn": "韩国",
+        "time_bj": "09:00",
+        "group": "A组第1轮"
+      }
+    ],
+    "2026-06-26": [
+      {
+        "home": "Ecuador",
+        "away": "Germany",
+        "home_cn": "厄瓜多尔",
+        "away_cn": "德国",
+        "time_bj": "04:00",
+        "group": "E组第1轮"
+      },
+      {
+        "home": "Curacao",
+        "away": "Ivory Coast",
+        "home_cn": "库拉索",
+        "away_cn": "科特迪瓦",
+        "time_bj": "04:00",
+        "group": "E组第1轮"
+      },
+      {
+        "home": "Japan",
+        "away": "Sweden",
+        "home_cn": "日本",
+        "away_cn": "瑞典",
+        "time_bj": "07:00",
+        "group": "F组第1轮"
+      },
+      {
+        "home": "Tunisia",
+        "away": "Netherlands",
+        "home_cn": "突尼斯",
+        "away_cn": "荷兰",
+        "time_bj": "07:00",
+        "group": "F组第1轮"
+      },
+      {
+        "home": "Turkey",
+        "away": "USA",
+        "home_cn": "土耳其",
+        "away_cn": "美国",
+        "time_bj": "10:00",
+        "group": "D组第1轮"
+      },
+      {
+        "home": "Paraguay",
+        "away": "Australia",
+        "home_cn": "巴拉圭",
+        "away_cn": "澳大利亚",
+        "time_bj": "10:00",
+        "group": "D组第1轮"
+      }
+    ],
+    "2026-06-27": [
+      {
+        "home": "Norway",
+        "away": "France",
+        "home_cn": "挪威",
+        "away_cn": "法国",
+        "time_bj": "03:00",
+        "group": "I组第1轮"
+      },
+      {
+        "home": "Senegal",
+        "away": "Iraq",
+        "home_cn": "塞内加尔",
+        "away_cn": "伊拉克",
+        "time_bj": "03:00",
+        "group": "I组第1轮"
+      },
+      {
+        "home": "Uruguay",
+        "away": "Spain",
+        "home_cn": "乌拉圭",
+        "away_cn": "西班牙",
+        "time_bj": "08:00",
+        "group": "H组第1轮"
+      },
+      {
+        "home": "Cape Verde Islands",
+        "away": "Saudi Arabia",
+        "home_cn": "佛得角",
+        "away_cn": "沙特阿拉伯",
+        "time_bj": "08:00",
+        "group": "H组第1轮"
+      },
+      {
+        "home": "Egypt",
+        "away": "Iran",
+        "home_cn": "埃及",
+        "away_cn": "伊朗",
+        "time_bj": "11:00",
+        "group": "G组第1轮"
+      },
+      {
+        "home": "New Zealand",
+        "away": "Belgium",
+        "home_cn": "新西兰",
+        "away_cn": "比利时",
+        "time_bj": "11:00",
+        "group": "G组第1轮"
+      }
+    ],
+    "2026-06-28": [
+      {
+        "home": "Panama",
+        "away": "England",
+        "home_cn": "巴拿马",
+        "away_cn": "英格兰",
+        "time_bj": "05:00",
+        "group": "L组第1轮"
+      },
+      {
+        "home": "Croatia",
+        "away": "Ghana",
+        "home_cn": "克罗地亚",
+        "away_cn": "加纳",
+        "time_bj": "05:00",
+        "group": "L组第1轮"
+      },
+      {
+        "home": "Colombia",
+        "away": "Portugal",
+        "home_cn": "哥伦比亚",
+        "away_cn": "葡萄牙",
+        "time_bj": "07:30",
+        "group": "K组第1轮"
+      },
+      {
+        "home": "Congo DR",
+        "away": "Uzbekistan",
+        "home_cn": "民主刚果",
+        "away_cn": "乌兹别克斯坦",
+        "time_bj": "07:30",
+        "group": "K组第1轮"
+      },
+      {
+        "home": "Algeria",
+        "away": "Austria",
+        "home_cn": "阿尔及利亚",
+        "away_cn": "奥地利",
+        "time_bj": "10:00",
+        "group": "J组第1轮"
+      },
+      {
+        "home": "Jordan",
+        "away": "Argentina",
+        "home_cn": "约旦",
+        "away_cn": "阿根廷",
+        "time_bj": "10:00",
+        "group": "J组第1轮"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Cache (too many files, auto-generated)
+data/cache/
+
+# Reports (generated, archived via Actions artifacts)
+data/report_*.html
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
