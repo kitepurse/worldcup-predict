@@ -313,14 +313,23 @@ def _get_wc_teams():
 
 def _scrape_team_api(team_name):
     """从 football-data.org 获取球队数据"""
+    # schedule.json 队名 → API 队名映射（两套命名体系对齐）
+    api_name_map = {
+        "USA": "United States",
+        "Czech Republic": "Czechia",
+        "Bosnia": "Bosnia-Herzegovina",
+        "Curacao": "Curaçao",
+    }
+    lookup_name = api_name_map.get(team_name, team_name)
+
     teams = _get_wc_teams()
     team_id = None
     for name, tid in teams.items():
-        if name.lower() == team_name.lower():
+        if name.lower() == lookup_name.lower():
             team_id = tid
             break
     if team_id:
-        matches_data = _api(f"teams/{team_id}/matches?competitions=WC&limit=10")
+        matches_data = _api(f"teams/{team_id}/matches?competitions=WC&limit=10", timeout=45)
         if matches_data and "matches" in matches_data:
             return _count_matches(matches_data["matches"], team_name)
     return None
@@ -349,7 +358,7 @@ def _count_matches(matches, team_name):
         else:
             losses += 1
     total = wins + draws + losses
-    if total >= 3:
+    if total >= 1:
         return {"wins": wins, "draws": draws, "losses": losses,
                 "avg_goals_for": round(gf / total, 1), "avg_goals_against": round(ga / total, 1)}
     return None

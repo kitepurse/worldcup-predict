@@ -89,6 +89,7 @@ def _normalize(name):
         "Congo DR": "Congo DR", "DR Congo": "Congo DR",
         "Cabo Verde": "Cape Verde Islands", "Cape Verde": "Cape Verde Islands",
         "Saudi Arabia": "Saudi Arabia",
+        "Bosnia-Herzegovina": "Bosnia",
     }
     for old, new in replacements.items():
         if old.lower() == name.lower():
