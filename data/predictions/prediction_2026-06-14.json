@@ -1,0 +1,686 @@
+{
+  "date": "2026-06-14",
+  "predictions": [
+    {
+      "team_a": "卡塔尔",
+      "team_b": "瑞士",
+      "data_driven": {
+        "exp_goals_a": 0.75,
+        "exp_goals_b": 1.15,
+        "score": 0.8,
+        "reason": "数据驱动: xG 0.75:1.15, 状态0.3/0.5"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "0:1",
+            "prob": 30,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:2",
+            "prob": 26,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 22,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:1",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:2",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 31,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "0:1",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "0:2",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:1",
+          "prob": 31,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Qatar",
+      "team_b_en": "Switzerland",
+      "match_date": "2026-06-14",
+      "date_display": "03:00 北京时间",
+      "stage": "B组第1轮",
+      "stats_a": {
+        "name": "Qatar",
+        "cn_name": "卡塔尔",
+        "rank": 45,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 3,
+          "draws": 2,
+          "losses": 5,
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.2
+        },
+        "last30": {
+          "wins": 11,
+          "draws": 8,
+          "losses": 16,
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.2
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 0.9,
+          "avg_goals_against": 0.9
+        },
+        "away": {
+          "avg_goals_for": 0.7,
+          "avg_goals_against": 1.3
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "stats_b": {
+        "name": "Switzerland",
+        "cn_name": "瑞士",
+        "rank": 16,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 5,
+          "draws": 1,
+          "losses": 4,
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.7
+        },
+        "last30": {
+          "wins": 17,
+          "draws": 5,
+          "losses": 13,
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.7
+        },
+        "last5": {
+          "trend": "WWWDL"
+        },
+        "home": {
+          "avg_goals_for": 1.3,
+          "avg_goals_against": 0.5
+        },
+        "away": {
+          "avg_goals_for": 0.9,
+          "avg_goals_against": 0.7
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "h2h": {
+        "team_a": "Qatar",
+        "team_b": "Switzerland",
+        "total": 1,
+        "wins_a": 0,
+        "wins_b": 0,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2026-06-13",
+            "home": "Qatar",
+            "away": "Switzerland",
+            "score": "1:1"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "巴西",
+      "team_b": "摩洛哥",
+      "data_driven": {
+        "exp_goals_a": 1.45,
+        "exp_goals_b": 0.95,
+        "score": 0.9,
+        "reason": "数据驱动: xG 1.45:0.95, 状态0.6/0.5"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 33,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:0",
+            "prob": 27,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 20,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 36,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:0",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 29,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "1:0",
+          "prob": 36,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "0:0",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:1",
+          "prob": 29,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Brazil",
+      "team_b_en": "Morocco",
+      "match_date": "2026-06-14",
+      "date_display": "06:00 北京时间",
+      "stage": "C组第1轮",
+      "stats_a": {
+        "name": "Brazil",
+        "cn_name": "巴西",
+        "rank": 3,
+        "confederation": "南美",
+        "last10": {
+          "wins": 6,
+          "draws": 1,
+          "losses": 3,
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 0.6
+        },
+        "last30": {
+          "wins": 20,
+          "draws": 5,
+          "losses": 10,
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 0.6
+        },
+        "last5": {
+          "trend": "WWWDL"
+        },
+        "home": {
+          "avg_goals_for": 2.6,
+          "avg_goals_against": 0.4
+        },
+        "away": {
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 0.6
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "stats_b": {
+        "name": "Morocco",
+        "cn_name": "摩洛哥",
+        "rank": 13,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 5,
+          "draws": 3,
+          "losses": 2,
+          "avg_goals_for": 1.3,
+          "avg_goals_against": 0.6
+        },
+        "last30": {
+          "wins": 17,
+          "draws": 11,
+          "losses": 7,
+          "avg_goals_for": 1.3,
+          "avg_goals_against": 0.6
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 1.5,
+          "avg_goals_against": 0.4
+        },
+        "away": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.6
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "h2h": {
+        "team_a": "Brazil",
+        "team_b": "Morocco",
+        "total": 1,
+        "wins_a": 0,
+        "wins_b": 0,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2026-06-13",
+            "home": "Brazil",
+            "away": "Morocco",
+            "score": "1:1"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "海地",
+      "team_b": "苏格兰",
+      "data_driven": {
+        "exp_goals_a": 0.7,
+        "exp_goals_b": 1.2,
+        "score": 0.485,
+        "reason": "数据驱动: xG 0.7:1.2, 状态0.3/0.4"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "0:1",
+            "prob": 30,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:2",
+            "prob": 26,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 22,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:1",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:2",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 31,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "0:1",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "0:2",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:1",
+          "prob": 31,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Haiti",
+      "team_b_en": "Scotland",
+      "match_date": "2026-06-14",
+      "date_display": "09:00 北京时间",
+      "stage": "C组第1轮",
+      "stats_a": {
+        "name": "Haiti",
+        "cn_name": "海地",
+        "rank": 84,
+        "confederation": "北美",
+        "last10": {
+          "wins": 3,
+          "draws": 2,
+          "losses": 5,
+          "avg_goals_for": 0.6,
+          "avg_goals_against": 1.4
+        },
+        "last30": {
+          "wins": 11,
+          "draws": 8,
+          "losses": 16,
+          "avg_goals_for": 0.6,
+          "avg_goals_against": 1.4
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 0.7,
+          "avg_goals_against": 1.0
+        },
+        "away": {
+          "avg_goals_for": 0.5,
+          "avg_goals_against": 1.5
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "stats_b": {
+        "name": "Scotland",
+        "cn_name": "苏格兰",
+        "rank": 30,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 4,
+          "draws": 3,
+          "losses": 3,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.8
+        },
+        "last30": {
+          "wins": 14,
+          "draws": 11,
+          "losses": 10,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.8
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.6
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 0.8
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "h2h": {
+        "team_a": "Haiti",
+        "team_b": "Scotland",
+        "total": 1,
+        "wins_a": 0,
+        "wins_b": 1,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-14",
+            "home": "Haiti",
+            "away": "Scotland",
+            "score": "0:1"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "澳大利亚",
+      "team_b": "土耳其",
+      "data_driven": {
+        "exp_goals_a": 1.0,
+        "exp_goals_b": 0.95,
+        "score": 0.9,
+        "reason": "数据驱动: xG 1.0:0.95, 状态0.4/0.3"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 30,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 26,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "2:0",
+            "prob": 22,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "2:0",
+            "prob": 31,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "1:0",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:1",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "2:0",
+          "prob": 31,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Australia",
+      "team_b_en": "Turkey",
+      "match_date": "2026-06-14",
+      "date_display": "12:00 北京时间",
+      "stage": "D组第1轮",
+      "stats_a": {
+        "name": "Australia",
+        "cn_name": "澳大利亚",
+        "rank": 27,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 4,
+          "draws": 1,
+          "losses": 5,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 14,
+          "draws": 5,
+          "losses": 16,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "WWWDL"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "stats_b": {
+        "name": "Turkey",
+        "cn_name": "土耳其",
+        "rank": 44,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 3,
+          "draws": 3,
+          "losses": 4,
+          "avg_goals_for": 0.9,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 11,
+          "draws": 11,
+          "losses": 13,
+          "avg_goals_for": 0.9,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "h2h": {
+        "team_a": "Australia",
+        "team_b": "Turkey",
+        "total": 1,
+        "wins_a": 1,
+        "wins_b": 0,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-14",
+            "home": "Australia",
+            "away": "Turkey",
+            "score": "2:0"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    }
+  ],
+  "generated_at": "2026-06-17T20:38:00.793943"
+}

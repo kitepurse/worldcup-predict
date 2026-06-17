@@ -1,0 +1,382 @@
+{
+  "date": "2026-06-12",
+  "predictions": [
+    {
+      "team_a": "墨西哥",
+      "team_b": "南非",
+      "data_driven": {
+        "exp_goals_a": 1.1,
+        "exp_goals_b": 0.85,
+        "score": 0.9,
+        "reason": "数据驱动: xG 1.1:0.85, 状态0.4/0.3"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 33,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:0",
+            "prob": 27,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 20,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 36,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "0:0",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 29,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "1:0",
+          "prob": 36,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "0:0",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:1",
+          "prob": 29,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Mexico",
+      "team_b_en": "South Africa",
+      "match_date": "2026-06-12",
+      "date_display": "03:00 北京时间",
+      "stage": "A组第1轮",
+      "stats_a": {
+        "name": "Mexico",
+        "cn_name": "墨西哥",
+        "rank": 14,
+        "confederation": "北美",
+        "last10": {
+          "wins": 4,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.2,
+          "avg_goals_against": 0.9
+        },
+        "last30": {
+          "wins": 14,
+          "draws": 8,
+          "losses": 13,
+          "avg_goals_for": 1.2,
+          "avg_goals_against": 0.9
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 1.4,
+          "avg_goals_against": 0.7
+        },
+        "away": {
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.9
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "stats_b": {
+        "name": "South Africa",
+        "cn_name": "南非",
+        "rank": 60,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 3,
+          "draws": 3,
+          "losses": 4,
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 11,
+          "draws": 11,
+          "losses": 13,
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 0.9,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.7,
+          "avg_goals_against": 1.1
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "h2h": {
+        "team_a": "Mexico",
+        "team_b": "South Africa",
+        "total": 1,
+        "wins_a": 1,
+        "wins_b": 0,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-11",
+            "home": "Mexico",
+            "away": "South Africa",
+            "score": "2:0"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "韩国",
+      "team_b": "捷克",
+      "data_driven": {
+        "exp_goals_a": 1.0,
+        "exp_goals_b": 0.95,
+        "score": 0.85,
+        "reason": "数据驱动: xG 1.0:0.95, 状态0.4/0.4"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 30,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 26,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "2:0",
+            "prob": 22,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "1:0",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:1",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "2:0",
+            "prob": 31,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "1:0",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:1",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "2:0",
+          "prob": 31,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "South Korea",
+      "team_b_en": "Czech Republic",
+      "match_date": "2026-06-12",
+      "date_display": "10:00 北京时间",
+      "stage": "A组第1轮",
+      "stats_a": {
+        "name": "South Korea",
+        "cn_name": "韩国",
+        "rank": 25,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 4,
+          "draws": 3,
+          "losses": 3,
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.9
+        },
+        "last30": {
+          "wins": 14,
+          "draws": 11,
+          "losses": 10,
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.9
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 1.3,
+          "avg_goals_against": 0.7
+        },
+        "away": {
+          "avg_goals_for": 0.9,
+          "avg_goals_against": 0.9
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "stats_b": {
+        "name": "Czech Republic",
+        "cn_name": "捷克",
+        "rank": 36,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 4,
+          "draws": 3,
+          "losses": 3,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.9
+        },
+        "last30": {
+          "wins": 14,
+          "draws": 11,
+          "losses": 10,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.9
+        },
+        "last5": {
+          "trend": "WWWDD"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.7
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 0.9
+        },
+        "source": "fallback",
+        "data_quality": "fallback"
+      },
+      "h2h": {
+        "team_a": "South Korea",
+        "team_b": "Czech Republic",
+        "total": 7,
+        "wins_a": 2,
+        "wins_b": 3,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "3:2"
+          },
+          {
+            "date": "2023",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "3:3"
+          },
+          {
+            "date": "2021",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "1:0"
+          },
+          {
+            "date": "2013",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "3:3"
+          },
+          {
+            "date": "2021",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "0:1"
+          },
+          {
+            "date": "2005",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "1:3"
+          },
+          {
+            "date": "2007",
+            "home": "South Korea",
+            "away": "Czech Republic",
+            "score": "1:3"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    }
+  ],
+  "generated_at": "2026-06-17T20:34:55.013055"
+}

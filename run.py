@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 sys.path.insert(0, os.path.dirname(__file__))
 from modules.data_fetcher import fetch_tomorrow_matches, fetch_team_stats, fetch_h2h, fetch_standings, fetch_injuries, fetch_past_results, cn
 from modules.data_validator import cross_check, completeness_check, validate_schedule
-from modules.predictor import predict_match
-from modules.tracker import save_prediction, generate_accuracy_table
+from modules.predictor import predict_match, predict_match_backfill
+from modules.tracker import save_prediction, generate_accuracy_table, find_gaps
 from modules.report_builder import build_report
 from modules.mail_sender import send_report
 
@@ -92,6 +92,48 @@ def main():
     # 3. 保存预测
     save_prediction(tomorrow, predictions)
     print(f"\n💾 预测已保存", flush=True)
+
+    # 3.5. 缺口检测 → 回填缺失日期的预测（Mac休眠错过时自动补）
+    gaps = find_gaps()
+    if gaps:
+        print(f"\n🔄 发现 {len(gaps)} 个缺失日期的预测，开始回填...", flush=True)
+        for gap in gaps:
+            gdate = gap["date"]
+            print(f"\n  回填 {gdate} ({gap['count']}场)...", flush=True)
+            backfill_preds = []
+            for m in gap["matches"]:
+                home, away = m["home"], m["away"]
+                home_cn = cn(home)
+                away_cn = cn(away)
+                stats_h = fetch_team_stats(home)
+                stats_a = fetch_team_stats(away)
+                stats_h["cn_name"] = home_cn
+                stats_a["cn_name"] = away_cn
+                h2h = fetch_h2h(home, away)
+
+                # 仅用数据驱动层，不调用AI（事后回填，避免AI偏差）
+                result = predict_match_backfill(home, away, stats_h, stats_a, h2h)
+                result["team_a"] = home_cn
+                result["team_b"] = away_cn
+                result["team_a_en"] = home
+                result["team_b_en"] = away
+                result["match_date"] = m.get("date", gdate)
+                result["date_display"] = m.get("time_bj", "") + " 北京时间"
+                result["stage"] = m.get("group", "小组赛")
+                result["stats_a"] = stats_h
+                result["stats_b"] = stats_a
+                result["h2h"] = h2h
+                result["validation"] = {"score": 60, "quality": "低", "warnings": ["回填数据，仅供参考"]}
+                result["data_completeness"] = 75
+                backfill_preds.append(result)
+
+                top = result["final_predictions"]
+                print(f"    {home_cn} vs {away_cn}: {top[0]['score']}({top[0]['prob']}%) [回填]", flush=True)
+
+            save_prediction(gdate, backfill_preds)
+        print(f"  ✅ 回填完成", flush=True)
+    else:
+        print(f"  ✅ 无缺失预测", flush=True)
 
     # 4. 回填历史结果 → 准确性追踪
     fetch_past_results()

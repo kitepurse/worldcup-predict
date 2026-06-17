@@ -115,7 +115,8 @@ footer{{text-align:center;padding:30px;color:var(--muted);font-size:11px;border-
 <table><tr><th>日期</th><th>比赛</th><th>预测TOP3</th><th>实际比分</th><th>命中</th></tr>"""
         for r in accuracy_data["rows"]:
             hit_icon = "✅" if r["hit"] is True else "❌" if r["hit"] is False else "—"
-            html += f"<tr><td>{r['date']}</td><td>{r['match']}</td><td>{r['predicted_top3']}</td><td>{r['actual']}</td><td>{hit_icon}</td></tr>"
+            bf = " 🔄" if r.get("backfill") else ""
+            html += f"<tr><td>{r['date']}{bf}</td><td>{r['match']}</td><td>{r['predicted_top3']}</td><td>{r['actual']}</td><td>{hit_icon}</td></tr>"
         html += "</table></div>"
 
     html += f"""<footer>数据来源: API-FOOTBALL / Football-Data.org / 公开爬虫 | AI: DeepSeek V4 Pro | 仅供参考，不构成投注建议<br>© 陈强的世界杯预测系统 · {date_str}</footer>

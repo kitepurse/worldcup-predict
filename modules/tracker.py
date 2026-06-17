@@ -38,6 +38,34 @@ def save_result(match_id, home, away, home_score, away_score):
                    "score": new_score, "recorded_at": datetime.now().isoformat()}, f, ensure_ascii=False, indent=2)
 
 
+def find_gaps():
+    """找出 schedule.json 中有比赛但缺少预测文件的日期（限已过去的日期）"""
+    sched_path = os.path.join(os.path.dirname(__file__), "..", "data", "schedule.json")
+    if not os.path.exists(sched_path):
+        return []
+
+    with open(sched_path) as f:
+        sched = json.load(f)
+
+    today = datetime.now().strftime("%Y-%m-%d")
+    gaps = []
+
+    for date_str, matches in sched.get("matches", {}).items():
+        # 只看今天之前的日期
+        if date_str >= today:
+            continue
+        # 检查是否有预测文件
+        pred_path = os.path.join(PREDICTIONS_DIR, f"prediction_{date_str}.json")
+        if not os.path.exists(pred_path) and len(matches) > 0:
+            gaps.append({
+                "date": date_str,
+                "matches": matches,
+                "count": len(matches),
+            })
+
+    return gaps
+
+
 def load_all_predictions():
     """加载所有历史预测"""
     preds = []
@@ -96,10 +124,12 @@ def generate_accuracy_table():
             actual_score = result["score"] if result else "待定"
             predicted_scores = [x["score"] for x in p.get("final_predictions", [])]
             hit = actual_score in predicted_scores if actual_score != "待定" else "—"
+            is_backfill = p.get("backfilled", False)
             rows.append({
                 "date": pred_date, "match": f"{p['team_a']} vs {p['team_b']}",
                 "predicted_top3": " | ".join(predicted_scores),
                 "actual": actual_score, "hit": hit,
+                "backfill": is_backfill,
             })
 
     # 统计

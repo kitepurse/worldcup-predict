@@ -195,3 +195,51 @@ def predict_match(team_a, team_b, stats_a, stats_b, h2h):
         "final_predictions": top3,
         "confidence": "高" if data1["score"] > 0.6 else "中" if data1["score"] > 0.35 else "低",
     }
+
+
+def predict_match_backfill(team_a, team_b, stats_a, stats_b, h2h):
+    """回填预测：仅数据驱动50% + 波动50%，跳过AI（避免事后偏差）"""
+    data1 = layer1_data_driven(stats_a, stats_b, h2h)
+
+    # 用数据驱动合成 TOP3（不调用AI）
+    exp_a = data1.get("exp_goals_a", 1.5)
+    exp_b = data1.get("exp_goals_b", 1.0)
+    score_val = data1.get("score", 0.5)
+
+    if exp_a > exp_b + 0.5:
+        top3 = [
+            {"score": f"{int(exp_a)}:{int(exp_b)}", "prob": 38, "reason": "数据驱动回填"},
+            {"score": f"{int(exp_a)}:{int(exp_b)+1}", "prob": 28, "reason": "数据驱动回填"},
+            {"score": f"{int(exp_a)+1}:{int(exp_b)}", "prob": 18, "reason": "数据驱动回填"},
+        ]
+    elif exp_a > exp_b + 0.2:
+        top3 = [
+            {"score": f"{int(exp_a)}:{int(exp_b)}", "prob": 33, "reason": "数据驱动回填"},
+            {"score": f"{int(exp_a)-1}:{int(exp_b)}", "prob": 27, "reason": "数据驱动回填"},
+            {"score": f"{int(exp_a)}:{int(exp_b)+1}", "prob": 20, "reason": "数据驱动回填"},
+        ]
+    else:
+        top3 = [
+            {"score": f"{int(exp_a)}:{int(exp_b)}", "prob": 30, "reason": "数据驱动回填"},
+            {"score": f"{int(exp_a)}:{int(exp_b)+1}", "prob": 26, "reason": "数据驱动回填"},
+            {"score": f"{int(exp_a)+1}:{int(exp_b)}", "prob": 22, "reason": "数据驱动回填"},
+        ]
+
+    # 波动修正
+    vol = layer3_volatility({"top3": top3})
+
+    # 归一化
+    total_p = sum(x["prob"] for x in vol["top3"])
+    if total_p > 0 and total_p != 100:
+        for x in vol["top3"]:
+            x["prob"] = max(5, min(60, int(x["prob"] * 100 / total_p)))
+
+    return {
+        "team_a": team_a, "team_b": team_b,
+        "data_driven": data1,
+        "ai_analysis": {"style": "回填", "tactics": "回填", "key_duel": "回填", "key_factor": "回填", "risk": "回填", "score_range": "回填", "top3": top3},
+        "volatility": vol,
+        "final_predictions": vol["top3"],
+        "confidence": "低",
+        "backfilled": True,
+    }
