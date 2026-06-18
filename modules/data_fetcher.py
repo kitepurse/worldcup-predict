@@ -127,10 +127,10 @@ def _api(path, timeout=15):
     if not api_key:
         return None
 
-    # 始终保持至少7秒间隔（10次/分 = 6秒/次，留余量）
+    # 始终保持至少65秒间隔（约1次/分，绝不触发限速）
     elapsed = time.time() - _last_api_call
-    if elapsed < 7:
-        time.sleep(7 - elapsed)
+    if elapsed < 65:
+        time.sleep(65 - elapsed)
     _last_api_call = time.time()
 
     url = f"{API_BASE}/{path}"

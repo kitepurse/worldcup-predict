@@ -19,6 +19,9 @@ def main():
     print(f"⚽ 世界杯比分预测系统 — {tomorrow} 赛事（北京时间）", flush=True)
     print(f"生成时间: {now_bj}（北京时间）", flush=True)
 
+    # 0. 率先拉取历史结果（API额度充裕，确保不漏）
+    fetch_past_results()
+
     # 1. 获取明天赛程
     print("\n📅 获取赛程...", flush=True)
     matches = fetch_tomorrow_matches()
