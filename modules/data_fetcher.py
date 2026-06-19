@@ -247,16 +247,16 @@ def _fallback_schedule(date_str):
 
 
 def _try_save_result(match_id, api_data):
-    """如果比赛已结束，保存实际结果"""
+    """如果比赛已结束，保存实际结果（队名统一 normalize）"""
     for m in api_data.get("matches", []):
         if m.get("id") == match_id and m.get("status") == "FINISHED":
             score = m.get("score", {}).get("fullTime", {})
             if score:
-                home = m["homeTeam"]["name"]
-                away = m["awayTeam"]["name"]
+                from modules.tracker import save_result, _normalize
+                home = _normalize(m["homeTeam"]["name"])
+                away = _normalize(m["awayTeam"]["name"])
                 hs = score.get("home", 0)
                 aw = score.get("away", 0)
-                from modules.tracker import save_result
                 save_result(f"wc_{match_id}", home, away, hs, aw)
 
 
