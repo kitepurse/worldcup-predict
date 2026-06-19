@@ -79,7 +79,7 @@ def load_all_predictions():
 def _normalize(name):
     """规范化球队名：去重音符号 + 统一拼写（永久规则，新增问题在此补充）"""
     replacements = {
-        "Curaçao": "Curacao", "Curaçao": "Curacao",
+        "Curaçao": "Curacao",
         "Czechia": "Czech Republic",
         "Türkiye": "Turkey",
         "Côte d'Ivoire": "Ivory Coast", "Cote d'Ivoire": "Ivory Coast",

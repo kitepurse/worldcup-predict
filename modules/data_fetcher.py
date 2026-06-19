@@ -34,9 +34,8 @@ CN_NAMES = {
     "Venezuela": "委内瑞拉", "Bolivia": "玻利维亚",
     "Iraq": "伊拉克", "Jordan": "约旦",
     "Czech Republic": "捷克", "Bosnia": "波黑", "Haiti": "海地",
-    "Scotland": "苏格兰", "Turkey": "土耳其", "Congo DR": "民主刚果",
-    "Uzbekistan": "乌兹别克斯坦", "South Africa": "南非",
-    "Curacao": "库拉索", "Ivory Coast": "科特迪瓦",
+    "Congo DR": "民主刚果", "Uzbekistan": "乌兹别克斯坦", "South Africa": "南非",
+    "Curacao": "库拉索",
 }
 
 FALLBACK = {
