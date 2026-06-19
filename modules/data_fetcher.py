@@ -220,14 +220,31 @@ def fetch_tomorrow_matches():
             if m.get("match_id"):
                 _try_save_result(m["match_id"], data)
 
-    # 兜底
+    # 兜底：API不可用时，用内置淘汰赛框架生成空占位（小组赛后fallback）
     if not matches:
-        matches = _fallback_schedule(tomorrow)
+        matches = _fallback_schedule(tomorrow_bj)
         for m in matches:
             m["source"] = "fallback"
 
     _save(cache_key, matches)
     return matches
+
+
+def _fallback_schedule(date_str):
+    """终极兜底：所有数据源均不可用时调用。
+    小组赛后 schedule.json 不再覆盖新日期，淘汰赛对阵由 football-data.org API 实时提供；
+    此处返回空列表让 main() 优雅退出（打印"明天无世界杯比赛"），不会对未知球队生成虚假预测。
+    如看到下方警告，说明 API 不可用，需检查 FOOTBALL_DATA_KEY 和网络。"""
+    # 淘汰赛日期区间快速判断，仅用于提示信息
+    from datetime import datetime
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d")
+        wc_end = datetime(2026, 7, 20)
+        if d < wc_end:
+            print(f"  ⚠ 所有数据源不可用！{date_str} 可能在世界杯期间，请检查 FOOTBALL_DATA_KEY 和网络", flush=True)
+    except Exception:
+        pass
+    return []
 
 
 def _try_save_result(match_id, api_data):
