@@ -338,31 +338,27 @@ def predict_match(team_a, team_b, stats_a, stats_b, h2h):
     vol = layer3_volatility(ai, data1.get("elo_gap", 0))
 
     # === 加权合并 ===
-    # Poisson 权重 60%，AI 权重 30%，用10%做归一化缓冲
-    poisson_top3 = {x["score"]: x["prob"] for x in data1.get("top3", [])}
-    ai_top3 = vol["top3"]
+    # Poisson 60% 定底盘，AI 30% 微调概率，AI不能改变Poisson的候选秩序
+    full_matrix = _score_matrix(data1["xg_a"], data1["xg_b"])
+    candidate_pool = {x["score"]: x["prob"] for x in full_matrix[:8]}  # TOP8候选池
 
-    # 第一步：合并 Poisson + AI 概率
-    merged = {}
-    for item in ai_top3:
+    # AI概率映射（仅当AI选的比分在Poisson候选池内才采纳）
+    ai_map = {}
+    for item in vol.get("top3", []):
         score = item["score"]
-        ai_prob = item["prob"]
-        poisson_prob = poisson_top3.get(score, 0)
-        # 60% Poisson + 30% AI
+        if score in candidate_pool:
+            ai_map[score] = item["prob"]
+
+    # 合并：基础分=Poisson概率(60%)，AI加分=AI概率×0.15（AI只能微调不能改变顺序）
+    merged = {}
+    for score, pp in candidate_pool.items():
+        ai_bonus = ai_map.get(score, 0) * 0.05
         merged[score] = {
-            "prob": round(poisson_prob * 0.60 + ai_prob * 0.30),
-            "reason": item.get("reason", ""),
+            "prob": round(pp * 0.60 + ai_bonus),
+            "reason": f"Poisson xG={data1['xg_a']:.1f}:{data1['xg_b']:.1f}",
         }
 
-    # 第二步：补充 Poisson 中有但 AI 没选的比分
-    for score, pp in poisson_top3.items():
-        if score not in merged and pp > 10:
-            merged[score] = {
-                "prob": round(pp * 0.60),
-                "reason": f"Poisson补充 xG={data1['xg_a']:.1f}:{data1['xg_b']:.1f}",
-            }
-
-    # 第三步：排序取 TOP3
+    # 排序取TOP3
     top3 = sorted(merged.items(), key=lambda x: x[1]["prob"], reverse=True)[:3]
 
     final = []
