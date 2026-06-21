@@ -1,74 +1,206 @@
-"""比分预测引擎 — 三层混合模型"""
-import json, os, re, time
+"""比分预测引擎 — Elo评分 + 泊松分布 + AI推理 三层混合模型"""
+import json, os, re, time, math
 from urllib.request import Request, urlopen
 
+# ============================================================
+# Elo 评分体系 — 基于 FIFA 世界排名换算
+# ============================================================
 
-def layer1_data_driven(stats_a, stats_b, h2h):
-    """第一层：数据驱动分析（权重25%）"""
+def _fifa_rank_to_elo(rank):
+    """FIFA排名 → Elo评分 (2200~1200)"""
+    if not rank or rank > 200:
+        return 1500
+    return max(1200, min(2200, 2200 - (rank - 1) * 10))
+
+
+HOME_ADVANTAGE = 50  # 世界杯中立场地，弱主场优势（赛程排前面的队略占优）
+
+
+def _elo_expected(elo_a, elo_b):
+    """Elo预期胜率 (0~1)"""
+    return 1.0 / (1.0 + 10.0 ** ((elo_b - elo_a + HOME_ADVANTAGE) / 400.0))
+
+
+def _expected_goals(elo_a, elo_b, rank_a=None, rank_b=None):
+    """基于Elo差距 + 排名差距 计算期望进球
+
+    核心逻辑：实力悬殊时总进球多（强队刷数据），实力接近时总进球适中。
+    返回: (xg_a, xg_b, elo_gap)
+    """
+    elo_gap = abs(elo_a - elo_b)
+    p_a_win = _elo_expected(elo_a, elo_b)
+
+    # 总期望进球：基础2.5 + Elo差距贡献（用指数衰减避免极端值）
+    # 400分差距→总进球约3.7，200→3.0，0→2.5
+    total_xg = 2.5 + (1.0 - math.exp(-elo_gap / 350.0)) * 2.5
+
+    # 排名差距加成
+    if rank_a and rank_b:
+        rank_gap = abs(rank_a - rank_b)
+        if rank_gap > 40:
+            total_xg += (1.0 - math.exp(-rank_gap / 100.0)) * 1.0
+
+    # 世界杯总进球上限（即使最悬殊也不超过5.5）
+    total_xg = min(total_xg, 5.5)
+
+    # 分配进球
+    xg_a = total_xg * p_a_win
+    xg_b = total_xg * (1.0 - p_a_win)
+
+    # 下限保护 + 上限保护
+    xg_a = max(0.4, min(4.5, xg_a))
+    xg_b = max(0.3, min(3.5, xg_b))
+
+    return round(xg_a, 2), round(xg_b, 2), round(elo_gap)
+
+
+# ============================================================
+# 泊松分布 — 比分概率矩阵
+# ============================================================
+
+# 预计算阶乘缓存
+_FACT = [1]
+for _i in range(1, 21):
+    _FACT.append(_FACT[-1] * _i)
+
+
+def _poisson_prob(lam, k):
+    """泊松分布 P(X=k) = λ^k * e^(-λ) / k!"""
+    if k >= len(_FACT):
+        return 0.0
+    return (lam ** k) * math.exp(-lam) / _FACT[k]
+
+
+def _score_matrix(xg_a, xg_b, max_goals=8):
+    """生成比分概率矩阵，返回 TOP N 比分及概率"""
+    scores = []
+    for a in range(max_goals + 1):
+        for b in range(max_goals + 1):
+            prob_a = _poisson_prob(xg_a, a)
+            prob_b = _poisson_prob(xg_b, b)
+            # 独立泊松假设（简化：实际进球有微弱相关性，但可忽略）
+            joint_prob = prob_a * prob_b
+            if joint_prob > 0.001:  # 过滤极低概率
+                scores.append({
+                    "score": f"{a}:{b}",
+                    "prob": round(joint_prob * 100, 1),
+                    "a": a, "b": b,
+                })
+
+    # 按概率降序
+    scores.sort(key=lambda x: x["prob"], reverse=True)
+    return scores
+
+
+def _poisson_top3(xg_a, xg_b):
+    """泊松分布 TOP3 比分预测"""
+    matrix = _score_matrix(xg_a, xg_b)
+    top3 = []
+    for item in matrix[:3]:
+        top3.append({
+            "score": item["score"],
+            "prob": item["prob"],
+            "reason": f"Elo+Poisson xG={xg_a:.1f}:{xg_b:.1f}",
+        })
+    # 归一化
+    total = sum(x["prob"] for x in top3)
+    if total > 0:
+        for x in top3:
+            x["prob"] = round(x["prob"] / total * 100)
+    return top3
+
+
+# ============================================================
+# 第一层：Elo + 泊松分布 (权重 50%)
+# ============================================================
+
+def layer1_elo_poisson(stats_a, stats_b, h2h):
+    """Elo评分 + 泊松分布 数据驱动预测"""
     if not stats_a or not stats_b:
-        return {"score": 0.5, "reason": "数据不足"}
+        return {"xg_a": 1.3, "xg_b": 1.2, "elo_gap": 0, "top3": [], "score": 0.5}
 
+    rank_a = (stats_a or {}).get("rank", 50)
+    rank_b = (stats_b or {}).get("rank", 50)
+    elo_a = _fifa_rank_to_elo(rank_a)
+    elo_b = _fifa_rank_to_elo(rank_b)
+
+    # 近期状态修正 Elo（±50 分）
     a10 = stats_a.get("last10", {})
     b10 = stats_b.get("last10", {})
-
-    # 进攻/防守得分
-    a_att = a10.get("avg_goals_for", 1.0)
-    a_def = a10.get("avg_goals_against", 1.0)
-    b_att = b10.get("avg_goals_for", 1.0)
-    b_def = b10.get("avg_goals_against", 1.0)
-
-    # 期望进球 (主队视角)
-    exp_a = round((a_att + b_def) / 2, 2)
-    exp_b = round((b_att + a_def) / 2, 2)
-
-    # 近期状态
     a_wins = a10.get("wins", 3)
     b_wins = b10.get("wins", 3)
-    a_form = a_wins / 10  # 0~1
-    b_form = b_wins / 10
+    elo_a += (a_wins - 5) * 10  # 胜5场=基准，多1场+10分
+    elo_b += (b_wins - 5) * 10
 
-    # 历史交锋修正
+    # 历史交锋修正（±40 分）
     h2h_bonus = 0
-    if h2h and h2h.get("total", 0) > 0:
-        total = h2h["total"]
-        h2h_bonus = (h2h["wins_a"] - h2h["wins_b"]) / total * 0.3  # -0.3 ~ +0.3
+    if h2h and h2h.get("total", 0) >= 2:
+        h2h_ratio = (h2h["wins_a"] - h2h["wins_b"]) / h2h["total"]
+        h2h_bonus = int(h2h_ratio * 40)
+        elo_a += h2h_bonus
+        elo_b -= h2h_bonus
 
-    # 综合得分
-    base_score = exp_a / (exp_a + exp_b + 0.1)  # 0~1
-    score = base_score * 0.6 + a_form * 0.25 + h2h_bonus + 0.5
-    score = max(0.1, min(0.9, score))
+    xg_a, xg_b, elo_gap = _expected_goals(elo_a, elo_b, rank_a, rank_b)
+    top3 = _poisson_top3(xg_a, xg_b)
+
+    # Elo 预期胜率
+    score = round(_elo_expected(elo_a, elo_b), 3)
 
     return {
-        "exp_goals_a": exp_a, "exp_goals_b": exp_b,
-        "score": round(score, 3),
-        "reason": f"数据驱动: xG {exp_a}:{exp_b}, 状态{a_form:.1f}/{b_form:.1f}",
+        "xg_a": xg_a, "xg_b": xg_b,
+        "elo_a": elo_a, "elo_b": elo_b,
+        "elo_gap": elo_gap,
+        "h2h_bonus": h2h_bonus,
+        "top3": top3,
+        "score": score,
+        "reason": f"Elo: {elo_a} vs {elo_b} (差{elo_gap}) | xG {xg_a}:{xg_b}",
     }
 
 
+# ============================================================
+# 第二层：AI 推理分析 (权重 40%)
+# ============================================================
+
 def layer2_ai_analysis(team_a, team_b, stats_a, stats_b, h2h, data1):
-    """第二层：AI 推理分析（权重65%）"""
+    """AI 推理分析 — 接收 Elo+Poisson 结果做参考"""
     api_key = os.environ.get("DEEPSEEK_API_KEY", "")
     if not api_key:
         return _fallback_ai(team_a, team_b, stats_a, stats_b, data1)
 
     cn_a = (stats_a or {}).get("cn_name", team_a)
     cn_b = (stats_b or {}).get("cn_name", team_b)
+    rank_a = (stats_a or {}).get("rank", "?")
+    rank_b = (stats_b or {}).get("rank", "?")
+
+    # 用 Poission 结果生成参考提示
+    poisson_ref = ""
+    if data1.get("top3"):
+        poisson_ref = " | ".join([f"{x['score']}({x['prob']}%)" for x in data1["top3"]])
 
     prompt = f"""你是资深足球分析师，需要基于数据对世界杯比赛进行深度多角度分析并预测比分。
 
 ## {cn_a}({team_a}) vs {cn_b}({team_b})
 
 ### 球队数据
-{cn_a}: 世界排名{(stats_a or {}).get('rank','?')} | {(stats_a or {}).get('confederation','?')}
-近10场: {(stats_a or {}).get('last10',{})} | 近30场: {(stats_a or {}).get('last30',{})}
-{cn_b}: 世界排名{(stats_b or {}).get('rank','?')} | {(stats_b or {}).get('confederation','?')}
-近10场: {(stats_b or {}).get('last10',{})} | 近30场: {(stats_b or {}).get('last30',{})}
+{cn_a}: 世界排名#{rank_a} | {(stats_a or {}).get('confederation','?')}
+近10场: {(stats_a or {}).get('last10',{})}
+{cn_b}: 世界排名#{rank_b} | {(stats_b or {}).get('confederation','?')}
+近10场: {(stats_b or {}).get('last10',{})}
 
 ### 历史交锋
 {h2h}
 
-### 数据模型参考
-期望进球: {cn_a} {data1.get('exp_goals_a','?')} : {data1.get('exp_goals_b','?')} {cn_b}
+### Elo+泊松分布参考（数据模型）
+Elo评分: {cn_a} {data1.get('elo_a','?')} vs {cn_b} {data1.get('elo_b','?')} (差值{data1.get('elo_gap','?')})
+期望进球(xG): {cn_a} {data1.get('xg_a','?')} : {data1.get('xg_b','?')} {cn_b}
+泊松TOP3: {poisson_ref}
+
+### 重要提示（必须遵守）
+- 这是48队世界杯，存在大量实力悬殊场次
+- **强制性规则**：如果两队Elo差距>400，TOP1比分必须≥3球差距（如4:0、5:1、3:0）
+- **强制性规则**：如果两队Elo差距>600，TOP1比分必须≥4球差距（如5:0、6:1、4:0）
+- 参考泊松分布数据，它基于真实统计规律，比你的直觉更准确
+- 禁止所有比赛都预测1球小胜！悬殊场次不预测大比分会降低准确率
 
 ### 分析要求（请逐项输出）
 ① 战术风格预判：双方打法特点、阵型预测、比赛节奏
@@ -126,118 +258,165 @@ def layer2_ai_analysis(team_a, team_b, stats_a, stats_b, h2h, data1):
 
 
 def _fallback_ai(team_a, team_b, stats_a, stats_b, data1):
-    """AI不可用时的规则兜底"""
-    exp_a = data1.get("exp_goals_a", 1.5)
-    exp_b = data1.get("exp_goals_b", 1.0)
-    total = exp_a + exp_b
+    """AI不可用时的 Elo+Poisson 规则兜底"""
+    xg_a = data1.get("xg_a", 1.5)
+    xg_b = data1.get("xg_b", 1.0)
+    elo_gap = data1.get("elo_gap", 0)
 
-    if exp_a > exp_b + 0.5:
-        style, kf = "一边倒", f"{team_a}进攻碾压{team_b}"
-        top3 = [{"score": "2:0", "prob": 35, "reason": "零封胜"}, {"score": "2:1", "prob": 30, "reason": "小胜"}, {"score": "1:1", "prob": 18, "reason": "爆冷平"}]
-    elif exp_a > exp_b + 0.2:
-        style, kf = "对攻", f"{team_a}略占优但{team_b}有反击"
-        top3 = [{"score": "2:1", "prob": 30, "reason": "一球小胜"}, {"score": "1:1", "prob": 28, "reason": "平局"}, {"score": "1:2", "prob": 18, "reason": "客胜"}]
+    # 直接用 Poission 结果
+    if data1.get("top3"):
+        top3 = data1["top3"]
     else:
-        style, kf = "防守", "实力接近，中场绞杀"
-        top3 = [{"score": "1:1", "prob": 32, "reason": "闷平"}, {"score": "1:0", "prob": 25, "reason": "一球决胜"}, {"score": "0:1", "prob": 22, "reason": "客胜"}]
+        top3 = _poisson_top3(xg_a, xg_b)
 
-    return {"style": style, "key_factor": kf, "score_range": f"{int(exp_a-0.3)}:{int(exp_b-0.3)} ~ {int(exp_a+1)}:{int(exp_b+1)}", "top3": top3}
+    if elo_gap > 300:
+        style, kf = "强队碾压", f"{team_a}实力远超{team_b}，预计大比分"
+    elif elo_gap > 150:
+        style, kf = "实力差距明显", f"{team_a}明显占优"
+    elif elo_gap > 50:
+        style, kf = "对攻", f"实力接近，{team_a}略占优势"
+    else:
+        style, kf = "胶着", "实力极为接近，中场绞杀"
+
+    return {
+        "style": style, "key_factor": kf,
+        "score_range": f"{int(xg_a-0.5)}:{max(0,int(xg_b-0.5))} ~ {int(xg_a+1.5)}:{int(xg_b+1)}",
+        "top3": top3,
+    }
 
 
-def layer3_volatility(ai_result):
-    """第三层：波动性修正（权重10%）"""
+# ============================================================
+# 第三层：波动性修正 (权重 10%)
+# ============================================================
+
+def layer3_volatility(ai_result, elo_gap=0):
+    """波动性修正：实力悬殊时降低冷门概率，实力接近时提升"""
     top3 = ai_result.get("top3", [])
-    # 给第三选项加一点概率（低概率高赔率事件）
     modified = []
     for i, item in enumerate(top3):
         prob = item["prob"]
         if i == 0:
-            prob = max(15, prob - 3)  # 最可能选项略降概率
+            if elo_gap > 200:
+                prob = min(65, prob + 5)   # 强队稳赢 → 提高首选概率
+            elif elo_gap < 50:
+                prob = max(20, prob - 3)   # 实力接近 → 降低首选
+            else:
+                prob = max(15, prob - 2)
         elif i == 1:
             prob = prob + 1
         else:
-            prob = min(25, prob + 4)  # 小概率事件略升概率
-        modified.append({**item, "prob": max(5, min(60, prob))})
-    return {"top3": modified, "note": "已加入波动性修正（伤病/赛制/心理因素）"}
+            if elo_gap > 200:
+                prob = max(5, prob - 2)    # 悬殊时冷门概率更低
+            else:
+                prob = min(25, prob + 4)
+        modified.append({**item, "prob": max(5, min(65, prob))})
+    return {"top3": modified, "note": f"波动修正(Elo差{elo_gap})"}
 
+
+# ============================================================
+# 主预测函数
+# ============================================================
 
 def predict_match(team_a, team_b, stats_a, stats_b, h2h):
-    """综合预测：数据驱动25% + AI 65% + 波动10%"""
-    data1 = layer1_data_driven(stats_a, stats_b, h2h)
+    """综合预测：Elo+Poisson 60% + AI分析 30% + 波动修正 10%"""
+    # 第1层：Elo + Poisson
+    data1 = layer1_elo_poisson(stats_a, stats_b, h2h)
+
+    # 第2层：AI分析
     ai = layer2_ai_analysis(team_a, team_b, stats_a, stats_b, h2h, data1)
-    vol = layer3_volatility(ai)
 
-    # 加权合并: AI的TOP3为主，数据驱动调整概率
-    top3 = []
-    for item in vol["top3"]:
-        prob = item["prob"]
-        # AI权重65% + 数据驱动方向修正
-        data_score = data1.get("score", 0.5)
-        if data_score > 0.55:
-            prob = int(prob * 0.65 + prob * 0.10)  # 数据偏主队，略微加概率
-        elif data_score < 0.45:
-            prob = int(prob * 0.65 + prob * 0.05)  # 数据偏客队
-        else:
-            prob = int(prob * 0.65 + prob * 0.10)  # 均势
-        top3.append({**item, "prob": max(5, min(60, prob))})
+    # 第3层：波动修正
+    vol = layer3_volatility(ai, data1.get("elo_gap", 0))
 
-    # 归一化概率到100%左右
-    total_p = sum(x["prob"] for x in top3)
-    if total_p > 0 and total_p != 100:
-        for x in top3:
-            x["prob"] = max(5, min(60, int(x["prob"] * 100 / total_p)))
+    # === 加权合并 ===
+    # Poisson 权重 60%，AI 权重 30%，用10%做归一化缓冲
+    poisson_top3 = {x["score"]: x["prob"] for x in data1.get("top3", [])}
+    ai_top3 = vol["top3"]
+
+    # 第一步：合并 Poisson + AI 概率
+    merged = {}
+    for item in ai_top3:
+        score = item["score"]
+        ai_prob = item["prob"]
+        poisson_prob = poisson_top3.get(score, 0)
+        # 60% Poisson + 30% AI
+        merged[score] = {
+            "prob": round(poisson_prob * 0.60 + ai_prob * 0.30),
+            "reason": item.get("reason", ""),
+        }
+
+    # 第二步：补充 Poisson 中有但 AI 没选的比分
+    for score, pp in poisson_top3.items():
+        if score not in merged and pp > 10:
+            merged[score] = {
+                "prob": round(pp * 0.60),
+                "reason": f"Poisson补充 xG={data1['xg_a']:.1f}:{data1['xg_b']:.1f}",
+            }
+
+    # 第三步：排序取 TOP3
+    top3 = sorted(merged.items(), key=lambda x: x[1]["prob"], reverse=True)[:3]
+
+    final = []
+    for score, info in top3:
+        final.append({
+            "score": score,
+            "prob": max(5, min(65, info["prob"])),
+            "reason": info["reason"],
+        })
+
+    # 归一化
+    total_p = sum(x["prob"] for x in final)
+    if total_p > 0 and abs(total_p - 100) > 5:
+        for x in final:
+            x["prob"] = max(5, min(65, round(x["prob"] * 100 / total_p)))
+
+    # 置信度：基于 Elo 差距 + 数据质量
+    elo_gap = data1.get("elo_gap", 0)
+    if elo_gap > 250:
+        confidence = "高"
+    elif elo_gap > 100:
+        confidence = "中"
+    else:
+        confidence = "低"
 
     return {
         "team_a": team_a, "team_b": team_b,
         "data_driven": data1,
         "ai_analysis": ai,
         "volatility": vol,
-        "final_predictions": top3,
-        "confidence": "高" if data1["score"] > 0.6 else "中" if data1["score"] > 0.35 else "低",
+        "final_predictions": final,
+        "confidence": confidence,
     }
 
 
 def predict_match_backfill(team_a, team_b, stats_a, stats_b, h2h):
-    """回填预测：仅数据驱动50% + 波动50%，跳过AI（避免事后偏差）"""
-    data1 = layer1_data_driven(stats_a, stats_b, h2h)
+    """回填预测：仅 Elo + Poisson，不调用AI"""
+    data1 = layer1_elo_poisson(stats_a, stats_b, h2h)
+    top3 = data1.get("top3", [])
 
-    # 用数据驱动合成 TOP3（不调用AI）
-    exp_a = data1.get("exp_goals_a", 1.5)
-    exp_b = data1.get("exp_goals_b", 1.0)
-    score_val = data1.get("score", 0.5)
-
-    if exp_a > exp_b + 0.5:
-        top3 = [
-            {"score": f"{int(exp_a)}:{int(exp_b)}", "prob": 38, "reason": "数据驱动回填"},
-            {"score": f"{int(exp_a)}:{int(exp_b)+1}", "prob": 28, "reason": "数据驱动回填"},
-            {"score": f"{int(exp_a)+1}:{int(exp_b)}", "prob": 18, "reason": "数据驱动回填"},
-        ]
-    elif exp_a > exp_b + 0.2:
-        top3 = [
-            {"score": f"{int(exp_a)}:{int(exp_b)}", "prob": 33, "reason": "数据驱动回填"},
-            {"score": f"{int(exp_a)-1}:{int(exp_b)}", "prob": 27, "reason": "数据驱动回填"},
-            {"score": f"{int(exp_a)}:{int(exp_b)+1}", "prob": 20, "reason": "数据驱动回填"},
-        ]
-    else:
-        top3 = [
-            {"score": f"{int(exp_a)}:{int(exp_b)}", "prob": 30, "reason": "数据驱动回填"},
-            {"score": f"{int(exp_a)}:{int(exp_b)+1}", "prob": 26, "reason": "数据驱动回填"},
-            {"score": f"{int(exp_a)+1}:{int(exp_b)}", "prob": 22, "reason": "数据驱动回填"},
-        ]
+    # 如果没有 Poisson 结果（数据不足），用简单推断
+    if not top3:
+        xg_a = data1.get("xg_a", 1.3)
+        xg_b = data1.get("xg_b", 1.2)
+        top3 = _poisson_top3(xg_a, xg_b)
 
     # 波动修正
-    vol = layer3_volatility({"top3": top3})
+    vol = layer3_volatility({"top3": top3}, data1.get("elo_gap", 0))
 
     # 归一化
     total_p = sum(x["prob"] for x in vol["top3"])
-    if total_p > 0 and total_p != 100:
+    if total_p > 0 and abs(total_p - 100) > 5:
         for x in vol["top3"]:
-            x["prob"] = max(5, min(60, int(x["prob"] * 100 / total_p)))
+            x["prob"] = max(5, min(65, round(x["prob"] * 100 / total_p)))
 
     return {
         "team_a": team_a, "team_b": team_b,
         "data_driven": data1,
-        "ai_analysis": {"style": "回填", "tactics": "回填", "key_duel": "回填", "key_factor": "回填", "risk": "回填", "score_range": "回填", "top3": top3},
+        "ai_analysis": {
+            "style": "回填(Elo+Poisson)", "tactics": "回填", "key_duel": "回填",
+            "key_factor": "回填", "risk": "回填", "score_range": "回填",
+            "top3": top3,
+        },
         "volatility": vol,
         "final_predictions": vol["top3"],
         "confidence": "低",
