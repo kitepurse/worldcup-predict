@@ -1,0 +1,847 @@
+{
+  "date": "2026-06-21",
+  "predictions": [
+    {
+      "team_a": "荷兰",
+      "team_b": "瑞典",
+      "data_driven": {
+        "exp_goals_a": 1.5,
+        "exp_goals_b": 3.5,
+        "score": 0.548,
+        "reason": "数据驱动: xG 1.5:3.5, 状态0.0/0.1"
+      },
+      "ai_analysis": {
+        "style": "比赛将呈现开放对攻与防守反击的鲜明碰撞。荷兰大概率主导控球并尝试阵地渗透，但攻防转换速度较慢；瑞典会主动放弃部分控球权，依赖高效反击和定位球制造威胁，整体节奏张弛交替明显。",
+        "tactics": "荷兰预计采用4-3-3或3-4-3阵型，强调边后卫插上和前场灵活换位，通过短传配合撕开防线，但缺乏稳定终结点；瑞典可能排出4-4-2或4-2-3-1，收缩防线并利用双后腰保护中后卫身前，一旦断球迅速通过长传找锋线高点，冲击荷兰转身偏慢的防线。",
+        "key_duel": "关键对位在于荷兰的边路进攻组合（邓弗里斯/加克波一侧）与瑞典左路防守体系的博弈；同时，瑞典双中锋（伊萨克与哲凯赖什）对范戴克与阿克这对荷兰中卫的冲击，将直接决定比赛天平。",
+        "key_factor": "首要胜负手是荷兰能否尽早破门以迫使瑞典阵型前压，否则一旦陷入久攻不下，瑞典的反击效率极易造成致命一击；次要因素是定位球攻防，瑞典拥有身高优势，而荷兰防线近期防定位球专注度存在波动。",
+        "risk": "主要风险在于荷兰核心中后场球员的吃牌隐患（如邓弗里斯易在边路防守中染黄）；其次，比赛若在高温或场地条件不佳的环境下进行，会进一步放大瑞典身体对抗的优势，并削弱荷兰的小球配合精准度。",
+        "score_range": "比分区间大概率集中在 1:2 至 2:2 之间，总进球数倾向于3-4球。",
+        "top3": [
+          {
+            "score": "1:2",
+            "prob": 28,
+            "reason": "历史交锋数据与近期效率均显示瑞典克制荷兰。瑞典反击质量和定位球能力更胜一筹，预计下半场通过反击或定位球攻入制胜球。"
+          },
+          {
+            "score": "2:2",
+            "prob": 22,
+            "reason": "荷兰若延续主场强攻态势并凭借球员个人能力闪光可获两球，但瑞典的进攻火力稳定，会两次洞穿荷兰防线，最终平局符合双方开放风格。"
+          },
+          {
+            "score": "1:3",
+            "prob": 18,
+            "reason": "参照两队近两次交手均为1:3，且瑞典近期场均进球高达5球，若荷兰先丢球后防线心态失衡，可能出现崩盘式大比分失利。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "1:2",
+            "prob": 25,
+            "reason": "历史交锋数据与近期效率均显示瑞典克制荷兰。瑞典反击质量和定位球能力更胜一筹，预计下半场通过反击或定位球攻入制胜球。"
+          },
+          {
+            "score": "2:2",
+            "prob": 23,
+            "reason": "荷兰若延续主场强攻态势并凭借球员个人能力闪光可获两球，但瑞典的进攻火力稳定，会两次洞穿荷兰防线，最终平局符合双方开放风格。"
+          },
+          {
+            "score": "1:3",
+            "prob": 22,
+            "reason": "参照两队近两次交手均为1:3，且瑞典近期场均进球高达5球，若荷兰先丢球后防线心态失衡，可能出现崩盘式大比分失利。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "1:2",
+          "prob": 35,
+          "reason": "历史交锋数据与近期效率均显示瑞典克制荷兰。瑞典反击质量和定位球能力更胜一筹，预计下半场通过反击或定位球攻入制胜球。"
+        },
+        {
+          "score": "2:2",
+          "prob": 33,
+          "reason": "荷兰若延续主场强攻态势并凭借球员个人能力闪光可获两球，但瑞典的进攻火力稳定，会两次洞穿荷兰防线，最终平局符合双方开放风格。"
+        },
+        {
+          "score": "1:3",
+          "prob": 31,
+          "reason": "参照两队近两次交手均为1:3，且瑞典近期场均进球高达5球，若荷兰先丢球后防线心态失衡，可能出现崩盘式大比分失利。"
+        }
+      ],
+      "confidence": "中",
+      "team_a_en": "Netherlands",
+      "team_b_en": "Sweden",
+      "match_date": "2026-06-21T01:00:00+08:00",
+      "date_display": "01:00 北京时间",
+      "stage": "F组第1轮",
+      "stats_a": {
+        "name": "Netherlands",
+        "cn_name": "荷兰",
+        "rank": 7,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 1.5
+        },
+        "away": {
+          "avg_goals_for": 1.7,
+          "avg_goals_against": 2.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Sweden",
+        "cn_name": "瑞典",
+        "rank": 23,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 5.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 5.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 5.8,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 4.2,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Netherlands",
+        "team_b": "Sweden",
+        "total": 7,
+        "wins_a": 1,
+        "wins_b": 4,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "1:3"
+          },
+          {
+            "date": "2024",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "1:3"
+          },
+          {
+            "date": "2017",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "2:2"
+          },
+          {
+            "date": "2019",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "0:0"
+          },
+          {
+            "date": "2009",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "3:1"
+          },
+          {
+            "date": "2000",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "0:3"
+          },
+          {
+            "date": "2001",
+            "home": "Netherlands",
+            "away": "Sweden",
+            "score": "1:3"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 88,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "Netherlands": "football-data.org 实时数据",
+          "Sweden": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-20T17:56:16.431330"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "德国",
+      "team_b": "科特迪瓦",
+      "data_driven": {
+        "exp_goals_a": 3.5,
+        "exp_goals_b": 1.0,
+        "score": 0.782,
+        "reason": "数据驱动: xG 3.5:1.0, 状态0.1/0.1"
+      },
+      "ai_analysis": {
+        "style": "德国将主导控球并采取高位压迫，节奏明快且边路冲击频繁；科特迪瓦预计收缩防线，依赖快速反击和定位球寻找机会。",
+        "tactics": "德国可能排出4-2-3-1阵型，利用双后腰保障攻守平衡，前场四人组频繁换位，边后卫大幅前插制造宽度。科特迪瓦大概率采用5-4-1或4-5-1防守阵型，重点压缩中路空间，并通过边路速度型球员冲击德国防线身后。比赛节奏将呈现德国持续施压、科特迪瓦伺机偷袭的格局。",
+        "key_duel": "德国前锋群与科特迪瓦三中卫的对抗至关重要，尤其是德国中锋的支点作用和后排插上对科特迪瓦禁区内的防空与补位形成持续考验。中场方面，德国双后腰能否切断科特迪瓦由守转攻的传球线路，将决定科特迪瓦反击的威胁程度。",
+        "key_factor": "历史交锋心理劣势（德国近三次主场对科特迪瓦1平2负且场均失2球）可能影响德国开局自信；德国能否尽早破门是比赛走向的关键，若前30分钟无法打破僵局，科特迪瓦的防守韧性将大幅提升比赛悬念。",
+        "risk": "若德国久攻不下，红黄牌累计和急躁情绪可能导致防线疏忽，给科特迪瓦反击偷袭的机会；科特迪瓦若主力中卫过早吃牌，防守体系可能崩塌。此外，高温或潮湿天气对双方体能分配的影响不可忽视。",
+        "score_range": "2-5球",
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 32,
+            "reason": "德国攻击力碾压，期望进球优势明显，科特迪瓦防线终被击穿但能利用德国高位防线空当取得一粒反击进球。"
+          },
+          {
+            "score": "2:1",
+            "prob": 25,
+            "reason": "德国占据场面优势并创造大量机会，但效率一般，科特迪瓦顽强防守并通过定位球或反击一度制造紧张局势。"
+          },
+          {
+            "score": "4:1",
+            "prob": 18,
+            "reason": "德国锋线全面开花，科特迪瓦体力下降后防线崩盘，比赛末段德国连入两球锁定大胜。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 29,
+            "reason": "德国攻击力碾压，期望进球优势明显，科特迪瓦防线终被击穿但能利用德国高位防线空当取得一粒反击进球。"
+          },
+          {
+            "score": "2:1",
+            "prob": 26,
+            "reason": "德国占据场面优势并创造大量机会，但效率一般，科特迪瓦顽强防守并通过定位球或反击一度制造紧张局势。"
+          },
+          {
+            "score": "4:1",
+            "prob": 22,
+            "reason": "德国锋线全面开花，科特迪瓦体力下降后防线崩盘，比赛末段德国连入两球锁定大胜。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "3:1",
+          "prob": 37,
+          "reason": "德国攻击力碾压，期望进球优势明显，科特迪瓦防线终被击穿但能利用德国高位防线空当取得一粒反击进球。"
+        },
+        {
+          "score": "2:1",
+          "prob": 33,
+          "reason": "德国占据场面优势并创造大量机会，但效率一般，科特迪瓦顽强防守并通过定位球或反击一度制造紧张局势。"
+        },
+        {
+          "score": "4:1",
+          "prob": 28,
+          "reason": "德国锋线全面开花，科特迪瓦体力下降后防线崩盘，比赛末段德国连入两球锁定大胜。"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "Germany",
+      "team_b_en": "Ivory Coast",
+      "match_date": "2026-06-21T04:00:00+08:00",
+      "date_display": "04:00 北京时间",
+      "stage": "E组第1轮",
+      "stats_a": {
+        "name": "Germany",
+        "cn_name": "德国",
+        "rank": 10,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 7.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 7.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 8.0,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 6.0,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Ivory Coast",
+        "cn_name": "科特迪瓦",
+        "rank": 38,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.0
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 0.0
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Germany",
+        "team_b": "Ivory Coast",
+        "total": 3,
+        "wins_a": 0,
+        "wins_b": 2,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Germany",
+            "away": "Ivory Coast",
+            "score": "1:2"
+          },
+          {
+            "date": "2022",
+            "home": "Germany",
+            "away": "Ivory Coast",
+            "score": "0:1"
+          },
+          {
+            "date": "2015",
+            "home": "Germany",
+            "away": "Ivory Coast",
+            "score": "0:3"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 80,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据",
+          "Germany 进球/失球数据异常(gf=7.0, ga=1.0)"
+        ],
+        "details": {
+          "Germany": "football-data.org 实时数据",
+          "Ivory Coast": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-20T17:57:05.890743"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "厄瓜多尔",
+      "team_b": "库拉索",
+      "data_driven": {
+        "exp_goals_a": 3.5,
+        "exp_goals_b": 1.0,
+        "score": 0.717,
+        "reason": "数据驱动: xG 3.5:1.0, 状态0.0/0.0"
+      },
+      "ai_analysis": {
+        "style": "厄瓜多尔掌控全局高压进攻，库拉索低位防守伺机反击，比赛节奏呈半场攻防演练态势。",
+        "tactics": "厄瓜多尔预计采用4-3-3阵型，利用边路宽度和高位压迫持续制造传中与二次进攻机会；库拉索大概率排出5-4-1大巴阵，收缩中路限制空间，依赖长传找单前锋寻求定位球和零星反击。",
+        "key_duel": "厄瓜多尔边锋群 vs 库拉索边翼卫：厄瓜多尔边路突破和传中质量直接决定破密集防守效率；中场控制权：厄瓜多尔三中场对库拉索双后腰的人数优势可形成持续压制，切断对方向前输送。",
+        "key_factor": "厄瓜多尔破僵能力：若前30分钟取得进球，库拉索密集防线将被迫前压，身后空间会放大厄瓜多尔锋线速度优势；库拉索定位球质量：厄瓜多尔防空存在短板，库拉索唯一进球途径可能源自定位球偷袭。",
+        "risk": "厄瓜多尔久攻不下可能出现心态急躁，红黄牌累积风险上升；库拉索若早早死守成功，60分钟后体能下降导致防线松动；比赛环境（高原或高温）可能降低对抗强度，意外中断打乱节奏。",
+        "score_range": "2:0 至 4:1",
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 38,
+            "reason": "厄瓜多尔攻击力碾压，但防线偶有走神送给对手一粒安慰球，期望进球差值最大概率落在此区间。"
+          },
+          {
+            "score": "2:0",
+            "prob": 28,
+            "reason": "厄瓜多尔零封能力尚可，库拉索进攻手段单一难以破门，两球优势符合控场格局。"
+          },
+          {
+            "score": "4:1",
+            "prob": 15,
+            "reason": "若厄瓜多尔早早多球领先，库拉索彻底崩盘，净胜三球以上重现双方近期攻防数据特征。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 35,
+            "reason": "厄瓜多尔攻击力碾压，但防线偶有走神送给对手一粒安慰球，期望进球差值最大概率落在此区间。"
+          },
+          {
+            "score": "2:0",
+            "prob": 29,
+            "reason": "厄瓜多尔零封能力尚可，库拉索进攻手段单一难以破门，两球优势符合控场格局。"
+          },
+          {
+            "score": "4:1",
+            "prob": 19,
+            "reason": "若厄瓜多尔早早多球领先，库拉索彻底崩盘，净胜三球以上重现双方近期攻防数据特征。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "3:1",
+          "prob": 42,
+          "reason": "厄瓜多尔攻击力碾压，但防线偶有走神送给对手一粒安慰球，期望进球差值最大概率落在此区间。"
+        },
+        {
+          "score": "2:0",
+          "prob": 34,
+          "reason": "厄瓜多尔零封能力尚可，库拉索进攻手段单一难以破门，两球优势符合控场格局。"
+        },
+        {
+          "score": "4:1",
+          "prob": 22,
+          "reason": "若厄瓜多尔早早多球领先，库拉索彻底崩盘，净胜三球以上重现双方近期攻防数据特征。"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "Ecuador",
+      "team_b_en": "Curacao",
+      "match_date": "2026-06-21T08:00:00+08:00",
+      "date_display": "08:00 北京时间",
+      "stage": "E组第1轮",
+      "stats_a": {
+        "name": "Ecuador",
+        "cn_name": "厄瓜多尔",
+        "rank": 31,
+        "confederation": "南美",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Curacao",
+        "cn_name": "库拉索",
+        "rank": 87,
+        "confederation": "北美",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 7.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 7.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 5.2
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 7.4
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Ecuador",
+        "team_b": "Curacao",
+        "total": 5,
+        "wins_a": 0,
+        "wins_b": 4,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Ecuador",
+            "away": "Curacao",
+            "score": "2:2"
+          },
+          {
+            "date": "2024",
+            "home": "Ecuador",
+            "away": "Curacao",
+            "score": "0:3"
+          },
+          {
+            "date": "2017",
+            "home": "Ecuador",
+            "away": "Curacao",
+            "score": "2:3"
+          },
+          {
+            "date": "2019",
+            "home": "Ecuador",
+            "away": "Curacao",
+            "score": "1:1"
+          },
+          {
+            "date": "2009",
+            "home": "Ecuador",
+            "away": "Curacao",
+            "score": "1:2"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 50,
+        "quality": "中",
+        "critical": false,
+        "warnings": [
+          "Ecuador 近10场数据缺失",
+          "H2H 数据源为估算值，非真实API数据",
+          "Curacao 进球/失球数据异常(gf=1.0, ga=7.0)"
+        ],
+        "details": {
+          "Ecuador": "football-data.org 实时数据",
+          "Curacao": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-20T17:57:54.633203"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "突尼斯",
+      "team_b": "日本",
+      "data_driven": {
+        "exp_goals_a": 1.5,
+        "exp_goals_b": 3.5,
+        "score": 0.526,
+        "reason": "数据驱动: xG 1.5:3.5, 状态0.0/0.0"
+      },
+      "ai_analysis": {
+        "style": "日本队将主导控球，通过技术型中场掌控节奏，形成高位压迫。突尼斯预计采取收缩防守、快速反击的务实打法，依靠边路速度和定位球制造威胁。比赛节奏可能呈现日本围攻、突尼斯伺机偷袭的态势。",
+        "tactics": "日本队预计采用4-2-3-1阵型，强调边路叠瓦式助攻与中路渗透结合，远藤航与守田英正组成双后腰控制中场。突尼斯可能摆出5-4-1阵型压缩空间，依靠前锋哈兹里或杰巴利的支点作用，并利用边翼卫后插上完成快速转换。日本队前场反抢后的二次进攻将是主要破门手段，突尼斯则寄望于定位球与长传打身后。",
+        "key_duel": "日本三笘薰/伊东纯也的边路突破 vs 突尼斯边翼卫与边中卫的协防体系。日本若能在边路一对一突破后送出精准传中，将极大威胁突尼斯球门；突尼斯若能成功封锁边路并将日本驱赶至外线无效控球，则能有效降低对方得分效率。中场控制权方面，远藤航的拦截与二次分配将直接决定日本能否持续施压。",
+        "key_factor": "日本队能否在比赛前30分钟取得进球。若早破门，将迫使突尼斯阵型前移，暴露更大空间；若长时间僵持，突尼斯防守信心增强，日本队可能陷入急躁，并面临被反击偷袭的风险。另一关键是突尼斯定位球质量，这是他们最可能打破预期进球劣势的手段。",
+        "risk": "日本队主力中卫富安健洋若带伤作战或状态不佳，后防线可能在高空球和反击中吃亏。突尼斯纪律性较强的防守可能导致红黄牌累积，影响防守硬度。若比赛中出现高温高湿天气，对高位逼抢的日本队体能消耗更大，下半场后段可能降速。日本队历史交锋占优但曾有过平局，轻敌心态或久攻不下的心理波动可能改变走势。",
+        "score_range": "0:2 - 1:4",
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 35,
+            "reason": "双方预期进球差距达2球，日本队近期进攻效率高，突尼斯近10战场均失5球，防守稳定性不足。历史交锋日本曾多次净胜3球，整体实力和战术克制明显。"
+          },
+          {
+            "score": "1:3",
+            "prob": 30,
+            "reason": "突尼斯可能利用定位球或反击取得一粒安慰球，但日本前场多点开花仍可打入3球，符合预期进球模型，符合双方攻防特点。"
+          },
+          {
+            "score": "0:2",
+            "prob": 18,
+            "reason": "若突尼斯顽强防守半场不失，日本需到下半场才陆续破门，或者日本进攻效率稍低于预期，但仍能凭借绝对场面优势净胜2球。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 32,
+            "reason": "双方预期进球差距达2球，日本队近期进攻效率高，突尼斯近10战场均失5球，防守稳定性不足。历史交锋日本曾多次净胜3球，整体实力和战术克制明显。"
+          },
+          {
+            "score": "1:3",
+            "prob": 31,
+            "reason": "突尼斯可能利用定位球或反击取得一粒安慰球，但日本前场多点开花仍可打入3球，符合预期进球模型，符合双方攻防特点。"
+          },
+          {
+            "score": "0:2",
+            "prob": 22,
+            "reason": "若突尼斯顽强防守半场不失，日本需到下半场才陆续破门，或者日本进攻效率稍低于预期，但仍能凭借绝对场面优势净胜2球。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "0:3",
+          "prob": 38,
+          "reason": "双方预期进球差距达2球，日本队近期进攻效率高，突尼斯近10战场均失5球，防守稳定性不足。历史交锋日本曾多次净胜3球，整体实力和战术克制明显。"
+        },
+        {
+          "score": "1:3",
+          "prob": 36,
+          "reason": "突尼斯可能利用定位球或反击取得一粒安慰球，但日本前场多点开花仍可打入3球，符合预期进球模型，符合双方攻防特点。"
+        },
+        {
+          "score": "0:2",
+          "prob": 25,
+          "reason": "若突尼斯顽强防守半场不失，日本需到下半场才陆续破门，或者日本进攻效率稍低于预期，但仍能凭借绝对场面优势净胜2球。"
+        }
+      ],
+      "confidence": "中",
+      "team_a_en": "Tunisia",
+      "team_b_en": "Japan",
+      "match_date": "2026-06-21T12:00:00+08:00",
+      "date_display": "12:00 北京时间",
+      "stage": "F组第1轮",
+      "stats_a": {
+        "name": "Tunisia",
+        "cn_name": "突尼斯",
+        "rank": 29,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 5.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 5.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 3.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 5.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Japan",
+        "cn_name": "日本",
+        "rank": 18,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 1.5
+        },
+        "away": {
+          "avg_goals_for": 1.7,
+          "avg_goals_against": 2.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Tunisia",
+        "team_b": "Japan",
+        "total": 8,
+        "wins_a": 1,
+        "wins_b": 5,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "0:3"
+          },
+          {
+            "date": "2024",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "0:0"
+          },
+          {
+            "date": "2023",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "3:1"
+          },
+          {
+            "date": "2022",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "3:3"
+          },
+          {
+            "date": "2017",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "0:3"
+          },
+          {
+            "date": "2015",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "0:1"
+          },
+          {
+            "date": "2001",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "1:3"
+          },
+          {
+            "date": "2018",
+            "home": "Tunisia",
+            "away": "Japan",
+            "score": "1:2"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 88,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "Tunisia": "football-data.org 实时数据",
+          "Japan": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-20T17:58:41.429949"
+      },
+      "critical": false,
+      "data_completeness": 100
+    }
+  ],
+  "generated_at": "2026-06-20T17:58:59.758458"
+}

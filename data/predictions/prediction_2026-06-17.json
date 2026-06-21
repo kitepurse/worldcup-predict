@@ -1,0 +1,686 @@
+{
+  "date": "2026-06-17",
+  "predictions": [
+    {
+      "team_a": "法国",
+      "team_b": "塞内加尔",
+      "data_driven": {
+        "exp_goals_a": 3.0,
+        "exp_goals_b": 1.0,
+        "score": 0.9,
+        "reason": "数据驱动: xG 3.0:1.0, 状态0.1/0.0"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 38,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "3:2",
+            "prob": 28,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "4:1",
+            "prob": 18,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 40,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "3:2",
+            "prob": 33,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "4:1",
+            "prob": 25,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "3:1",
+          "prob": 40,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "3:2",
+          "prob": 33,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "4:1",
+          "prob": 25,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "France",
+      "team_b_en": "Senegal",
+      "match_date": "2026-06-17",
+      "date_display": "03:00 北京时间",
+      "stage": "I组第1轮",
+      "stats_a": {
+        "name": "France",
+        "cn_name": "法国",
+        "rank": 2,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 3.4,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 2.5,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Senegal",
+        "cn_name": "塞内加尔",
+        "rank": 20,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 3.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 3.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 2.2
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 3.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "France",
+        "team_b": "Senegal",
+        "total": 1,
+        "wins_a": 1,
+        "wins_b": 0,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-16",
+            "home": "France",
+            "away": "Senegal",
+            "score": "3:1"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "伊拉克",
+      "team_b": "挪威",
+      "data_driven": {
+        "exp_goals_a": 1.0,
+        "exp_goals_b": 4.0,
+        "score": 0.318,
+        "reason": "数据驱动: xG 1.0:4.0, 状态0.0/0.1"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "1:4",
+            "prob": 30,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:5",
+            "prob": 26,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "2:4",
+            "prob": 22,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "1:4",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "1:5",
+            "prob": 34,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "2:4",
+            "prob": 31,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "1:4",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "1:5",
+          "prob": 34,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "2:4",
+          "prob": 31,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Iraq",
+      "team_b_en": "Norway",
+      "match_date": "2026-06-17",
+      "date_display": "06:00 北京时间",
+      "stage": "I组第1轮",
+      "stats_a": {
+        "name": "Iraq",
+        "cn_name": "伊拉克",
+        "rank": 68,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 3.0
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 4.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Norway",
+        "cn_name": "挪威",
+        "rank": 43,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 4.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 4.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 4.6,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 3.4,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Iraq",
+        "team_b": "Norway",
+        "total": 1,
+        "wins_a": 0,
+        "wins_b": 1,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-16",
+            "home": "Iraq",
+            "away": "Norway",
+            "score": "1:4"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "阿根廷",
+      "team_b": "阿尔及利亚",
+      "data_driven": {
+        "exp_goals_a": 3.0,
+        "exp_goals_b": 0.0,
+        "score": 0.9,
+        "reason": "数据驱动: xG 3.0:0.0, 状态0.1/0.0"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 38,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "3:1",
+            "prob": 28,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "4:0",
+            "prob": 18,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 40,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "3:1",
+            "prob": 33,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "4:0",
+            "prob": 25,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "3:0",
+          "prob": 40,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "3:1",
+          "prob": 33,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "4:0",
+          "prob": 25,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Argentina",
+      "team_b_en": "Algeria",
+      "match_date": "2026-06-17",
+      "date_display": "09:00 北京时间",
+      "stage": "J组第1轮",
+      "stats_a": {
+        "name": "Argentina",
+        "cn_name": "阿根廷",
+        "rank": 1,
+        "confederation": "南美",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 0.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 0.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 3.4,
+          "avg_goals_against": 0.0
+        },
+        "away": {
+          "avg_goals_for": 2.5,
+          "avg_goals_against": 0.0
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Algeria",
+        "cn_name": "阿尔及利亚",
+        "rank": 34,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 3.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 3.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 2.2
+        },
+        "away": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 3.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Argentina",
+        "team_b": "Algeria",
+        "total": 1,
+        "wins_a": 1,
+        "wins_b": 0,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-17",
+            "home": "Argentina",
+            "away": "Algeria",
+            "score": "3:0"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    },
+    {
+      "team_a": "奥地利",
+      "team_b": "约旦",
+      "data_driven": {
+        "exp_goals_a": 3.0,
+        "exp_goals_b": 1.0,
+        "score": 0.9,
+        "reason": "数据驱动: xG 3.0:1.0, 状态0.1/0.0"
+      },
+      "ai_analysis": {
+        "style": "回填",
+        "tactics": "回填",
+        "key_duel": "回填",
+        "key_factor": "回填",
+        "risk": "回填",
+        "score_range": "回填",
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 38,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "3:2",
+            "prob": 28,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "4:1",
+            "prob": 18,
+            "reason": "数据驱动回填"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:1",
+            "prob": 40,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "3:2",
+            "prob": 33,
+            "reason": "数据驱动回填"
+          },
+          {
+            "score": "4:1",
+            "prob": 25,
+            "reason": "数据驱动回填"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "3:1",
+          "prob": 40,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "3:2",
+          "prob": 33,
+          "reason": "数据驱动回填"
+        },
+        {
+          "score": "4:1",
+          "prob": 25,
+          "reason": "数据驱动回填"
+        }
+      ],
+      "confidence": "低",
+      "backfilled": true,
+      "team_a_en": "Austria",
+      "team_b_en": "Jordan",
+      "match_date": "2026-06-17",
+      "date_display": "12:00 北京时间",
+      "stage": "J组第1轮",
+      "stats_a": {
+        "name": "Austria",
+        "cn_name": "奥地利",
+        "rank": 25,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 3.4,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 2.5,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Jordan",
+        "cn_name": "约旦",
+        "rank": 71,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 3.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 3.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 2.2
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 3.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Austria",
+        "team_b": "Jordan",
+        "total": 1,
+        "wins_a": 1,
+        "wins_b": 0,
+        "draws": 0,
+        "matches": [
+          {
+            "date": "2026-06-17",
+            "home": "Austria",
+            "away": "Jordan",
+            "score": "3:1"
+          }
+        ],
+        "source": "football-data.org"
+      },
+      "validation": {
+        "score": 60,
+        "quality": "低",
+        "warnings": [
+          "回填数据，仅供参考"
+        ]
+      },
+      "data_completeness": 75
+    }
+  ],
+  "generated_at": "2026-06-18T15:10:01.610137"
+}

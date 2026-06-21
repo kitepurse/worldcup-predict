@@ -1,0 +1,847 @@
+{
+  "date": "2026-06-20",
+  "predictions": [
+    {
+      "team_a": "美国",
+      "team_b": "澳大利亚",
+      "data_driven": {
+        "exp_goals_a": 0.5,
+        "exp_goals_b": 3.0,
+        "score": 0.463,
+        "reason": "数据驱动: xG 0.5:3.0, 状态0.0/0.1"
+      },
+      "ai_analysis": {
+        "style": "澳大利亚将主导控球和进攻节奏，采用高位压迫与快速攻守转换，比赛预计呈一边倒态势；美国大概率采取深度防守反击，依赖边路速度和定位球，场面被动且偏慢节奏。",
+        "tactics": "美国预计以4-4-2或4-2-3-1阵型落位，防线靠后密集中路，依赖普利希奇等边路球员的个人推进创造零星反击机会，但中场组织能力不足，向前传球成功率低。澳大利亚有望排出4-3-3或3-4-3攻击阵型，利用中场人数优势和快速短传渗透撕开防线，边翼卫大幅前插创造传中与二点球机会，定位球也是重要武器。",
+        "key_duel": "美国边后卫与澳大利亚边锋/边翼卫的直接对话将决定禁区外威胁区域的封锁效果，尤其澳大利亚右路攻击群面对美国左路防守可能频繁形成1对1突破。同时，中场第二落点争夺将成为攻守转换的分水岭，澳大利亚凯塞多式的中场绞杀能力远胜美国，将切断美国前锋与中场的连线。",
+        "key_factor": "①澳大利亚能否在开场30分钟内取得进球：若能早早破门，美国被迫阵型前压，其后防空虚将被澳大利亚进一步利用，可能酿成大比分；若久攻不下，心态变化可能影响效率。②美国门将和定位球防守的临场发挥：美国若能在定位球中偷得一球，或将比赛拖入胶着，但数据显示其近期场均失球高达4.0，防线稳定性存疑。",
+        "risk": "红黄牌隐患：澳大利亚高压逼抢容易在前场吃牌，若核心后腰过早染黄将影响扫荡力度。伤病：美国前锋线人员选择有限，若主力反击点出现伤停将彻底丧失威胁。心态：美国若先丢球，近10场逆境下无胜绩，容易崩盘；澳大利亚近10场零失球信心充足，但可能出现轻敌情绪。此外，高温或湿滑场地条件下，技术型球队澳大利亚的传控可能受到一定影响，但身体对抗优势仍在。",
+        "score_range": "0:2至0:4，不排除美国偷袭1球的可能，但大概率澳大利亚零封",
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 42,
+            "reason": "澳大利亚近期攻防数据碾压，场均2.0进球且0失球，美国近10场场均失4球且攻击乏力，历史交锋也处下风，实力差距在90分钟内将转化为至少3球完胜。"
+          },
+          {
+            "score": "0:2",
+            "prob": 30,
+            "reason": "若澳大利亚进攻效率一般或门将发挥神勇，美国死守半场仅丢两球，符合预期进球模型美国0.5:3.0的下限走势，澳大利亚稳健拿下。"
+          },
+          {
+            "score": "1:3",
+            "prob": 18,
+            "reason": "美国利用定位球或反击偶然得手，但防线的结构性漏洞仍被澳大利亚三度洞穿，历史交锋中美国近3次交手均有丢球且场均失2球以上，本场类似剧本可能性存在。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 39,
+            "reason": "澳大利亚近期攻防数据碾压，场均2.0进球且0失球，美国近10场场均失4球且攻击乏力，历史交锋也处下风，实力差距在90分钟内将转化为至少3球完胜。"
+          },
+          {
+            "score": "0:2",
+            "prob": 31,
+            "reason": "若澳大利亚进攻效率一般或门将发挥神勇，美国死守半场仅丢两球，符合预期进球模型美国0.5:3.0的下限走势，澳大利亚稳健拿下。"
+          },
+          {
+            "score": "1:3",
+            "prob": 22,
+            "reason": "美国利用定位球或反击偶然得手，但防线的结构性漏洞仍被澳大利亚三度洞穿，历史交锋中美国近3次交手均有丢球且场均失2球以上，本场类似剧本可能性存在。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "0:3",
+          "prob": 42,
+          "reason": "澳大利亚近期攻防数据碾压，场均2.0进球且0失球，美国近10场场均失4球且攻击乏力，历史交锋也处下风，实力差距在90分钟内将转化为至少3球完胜。"
+        },
+        {
+          "score": "0:2",
+          "prob": 33,
+          "reason": "若澳大利亚进攻效率一般或门将发挥神勇，美国死守半场仅丢两球，符合预期进球模型美国0.5:3.0的下限走势，澳大利亚稳健拿下。"
+        },
+        {
+          "score": "1:3",
+          "prob": 23,
+          "reason": "美国利用定位球或反击偶然得手，但防线的结构性漏洞仍被澳大利亚三度洞穿，历史交锋中美国近3次交手均有丢球且场均失2球以上，本场类似剧本可能性存在。"
+        }
+      ],
+      "confidence": "中",
+      "team_a_en": "USA",
+      "team_b_en": "Australia",
+      "match_date": "2026-06-20T03:00:00+08:00",
+      "date_display": "03:00 北京时间",
+      "stage": "D组第1轮",
+      "stats_a": {
+        "name": "USA",
+        "cn_name": "美国",
+        "rank": 11,
+        "confederation": "北美",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 3.0
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 4.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Australia",
+        "cn_name": "澳大利亚",
+        "rank": 27,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 0.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 0.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 0.0
+        },
+        "away": {
+          "avg_goals_for": 1.7,
+          "avg_goals_against": 0.0
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "USA",
+        "team_b": "Australia",
+        "total": 5,
+        "wins_a": 1,
+        "wins_b": 3,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "USA",
+            "away": "Australia",
+            "score": "3:0"
+          },
+          {
+            "date": "2020",
+            "home": "USA",
+            "away": "Australia",
+            "score": "0:1"
+          },
+          {
+            "date": "2023",
+            "home": "USA",
+            "away": "Australia",
+            "score": "1:2"
+          },
+          {
+            "date": "2010",
+            "home": "USA",
+            "away": "Australia",
+            "score": "0:0"
+          },
+          {
+            "date": "2013",
+            "home": "USA",
+            "away": "Australia",
+            "score": "3:3"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 88,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "USA": "football-data.org 实时数据",
+          "Australia": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-19T18:23:34.545135"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "苏格兰",
+      "team_b": "摩洛哥",
+      "data_driven": {
+        "exp_goals_a": 1.0,
+        "exp_goals_b": 0.5,
+        "score": 0.75,
+        "reason": "数据驱动: xG 1.0:0.5, 状态0.1/0.0"
+      },
+      "ai_analysis": {
+        "style": "身体对抗与战术纪律的博弈",
+        "tactics": "苏格兰将沿用其传统的身体流打法，预计排出5-4-1或3-4-3阵型，重点利用边路传中和定位球制造威胁，比赛节奏倾向于直接快速，通过高强度的身体对抗和空中优势压制对手。摩洛哥则大概率采用4-3-3阵型，战术核心在于技术流的控球与快速转换，通过齐耶赫等球员的创造力在中路渗透，防守端依靠纪律性极强的落位和反抢来限制苏格兰的高空轰炸。",
+        "key_duel": "苏格兰边翼卫/边锋 vs 摩洛哥边后卫。苏格兰的绝大部分威胁进攻来自边路传中，摩洛哥的边后卫阿什拉夫和马兹拉维能否在防守中限制对手的传中质量，并在由守转攻时发挥速度优势，是这场比赛的攻防焦点。同时，中场二点球的争夺将决定控球权归属。",
+        "key_factor": "1. 定位球攻防：苏格兰运动战进球能力有限，定位球是破僵的最强武器，摩洛哥的防守专注度将面临严峻考验。 2. 体能分配：若摩洛哥陷入苏格兰的高强度身体对抗节奏，其在70分钟后的体能下降可能导致防守失位，这是苏格兰偷袭的机会。",
+        "risk": "1. 红黄牌风险：苏格兰的侵略性防守容易过早吃牌，导致防线束手束脚。 2. 摩洛哥的'神经刀'属性：其攻击线具备瞬间改变战局的个人能力（如齐耶赫状态回暖），一旦苏格兰前压后被反击得手，比赛将完全落入摩洛哥掌控。 3. 天气因素：若出现阴雨天气，苏格兰的高空作业将更具威胁。",
+        "score_range": "1-0 / 1-1 / 2-1",
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 35,
+            "reason": "苏格兰主场作战，身体优势明显，利用定位球和角球战术破门。摩洛哥技术占优，通过一次精妙配合或个人能力扳回一城，但苏格兰在尾声阶段利用体能和主场气势完成绝杀。"
+          },
+          {
+            "score": "1:1",
+            "prob": 30,
+            "reason": "典型的消耗战。苏格兰抢开局成功，通过高空轰炸先拔头筹。摩洛哥稳住阵脚后控住节奏，利用苏格兰防线短暂的注意力分散在下半场中段通过反击或远射扳平比分。"
+          },
+          {
+            "score": "1:0",
+            "prob": 20,
+            "reason": "苏格兰极致地执行了防守反击战术，通过一次成功的定位球战术由中后卫头球破门，随后全军退守。摩洛哥虽然掌握控球权，但面对苏格兰的密集防守和高强度对抗无计可施。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 32,
+            "reason": "苏格兰主场作战，身体优势明显，利用定位球和角球战术破门。摩洛哥技术占优，通过一次精妙配合或个人能力扳回一城，但苏格兰在尾声阶段利用体能和主场气势完成绝杀。"
+          },
+          {
+            "score": "1:1",
+            "prob": 31,
+            "reason": "典型的消耗战。苏格兰抢开局成功，通过高空轰炸先拔头筹。摩洛哥稳住阵脚后控住节奏，利用苏格兰防线短暂的注意力分散在下半场中段通过反击或远射扳平比分。"
+          },
+          {
+            "score": "1:0",
+            "prob": 24,
+            "reason": "苏格兰极致地执行了防守反击战术，通过一次成功的定位球战术由中后卫头球破门，随后全军退守。摩洛哥虽然掌握控球权，但面对苏格兰的密集防守和高强度对抗无计可施。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "2:1",
+          "prob": 36,
+          "reason": "苏格兰主场作战，身体优势明显，利用定位球和角球战术破门。摩洛哥技术占优，通过一次精妙配合或个人能力扳回一城，但苏格兰在尾声阶段利用体能和主场气势完成绝杀。"
+        },
+        {
+          "score": "1:1",
+          "prob": 35,
+          "reason": "典型的消耗战。苏格兰抢开局成功，通过高空轰炸先拔头筹。摩洛哥稳住阵脚后控住节奏，利用苏格兰防线短暂的注意力分散在下半场中段通过反击或远射扳平比分。"
+        },
+        {
+          "score": "1:0",
+          "prob": 27,
+          "reason": "苏格兰极致地执行了防守反击战术，通过一次成功的定位球战术由中后卫头球破门，随后全军退守。摩洛哥虽然掌握控球权，但面对苏格兰的密集防守和高强度对抗无计可施。"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "Scotland",
+      "team_b_en": "Morocco",
+      "match_date": "2026-06-20T06:00:00+08:00",
+      "date_display": "06:00 北京时间",
+      "stage": "C组第1轮",
+      "stats_a": {
+        "name": "Scotland",
+        "cn_name": "苏格兰",
+        "rank": 30,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.0
+        },
+        "last30": {
+          "wins": 5,
+          "draws": 2,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 0.0
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.0
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 0.0
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Morocco",
+        "cn_name": "摩洛哥",
+        "rank": 13,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Scotland",
+        "team_b": "Morocco",
+        "total": 8,
+        "wins_a": 1,
+        "wins_b": 5,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "1:2"
+          },
+          {
+            "date": "2021",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "2:0"
+          },
+          {
+            "date": "2023",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "2:2"
+          },
+          {
+            "date": "2022",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "0:1"
+          },
+          {
+            "date": "2013",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "1:2"
+          },
+          {
+            "date": "2020",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "2:2"
+          },
+          {
+            "date": "1995",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "2:2"
+          },
+          {
+            "date": "2011",
+            "home": "Scotland",
+            "away": "Morocco",
+            "score": "1:2"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 88,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "Scotland": "football-data.org 实时数据",
+          "Morocco": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-19T18:39:20.900580"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "巴西",
+      "team_b": "海地",
+      "data_driven": {
+        "exp_goals_a": 1.0,
+        "exp_goals_b": 0.5,
+        "score": 0.8,
+        "reason": "数据驱动: xG 1.0:0.5, 状态0.0/0.0"
+      },
+      "ai_analysis": {
+        "style": "巴西将主导控球，采用高位压迫和边路渗透打法，阵型预计为4-3-3或4-2-3-1，通过中场连续短传和边后卫套上制造宽度；海地则会收缩防守，摆出5-4-1或4-5-1密集防守阵型，寻求快速反击和定位球机会，比赛节奏整体呈现巴西围攻、海地死守的半场攻防态势。",
+        "tactics": "巴西中前场个人能力突出，将利用频繁的交叉换位和内切打乱海地防线层次，并通过中路直塞和肋部斜传制造杀机；海地防线需保持紧凑的双层站位，依靠中场大范围跑动切断巴西传球线路，进攻端依赖边路速度型球员在转换时冲击巴西高位防线身后。",
+        "key_duel": "核心对决集中在巴西锋线攻击群与海地中卫组合的对抗。巴西前锋凭借细腻脚下技术和无球跑动不断试探海地防线缝隙，而海地中卫在身体对抗和高空球防守上存在短板，若被巴西连续突破心理防线，极易出现漏人。另一关键在中场控制权，巴西中场通过人数优势和技术压制极可能完全掌控节奏，海地中场若无法有效拦截第一点，将陷入被动挨打。",
+        "key_factor": "决定比赛走向的关键因素一是巴西的破密集防守效率——能否在30分钟内取得首球将直接影响海地防守心态；二是海地的体能分配与防守专注度，若前60分钟保持不漏，可能逼平；但一旦体能下滑，替补深度不足会成为崩盘点。",
+        "risk": "主要风险包括：海地可能采取超常规强硬犯规战术导致巴西关键球员受伤或心态急躁；红黄牌过多可能打破海地防守体系；天气若闷热潮湿将加剧巴西无球跑动消耗，有利于海地拖慢节奏；另外巴西近期数据中平局占比极高，暗示攻坚能力存在不稳定因素，需警惕久攻不下的急躁情绪。",
+        "score_range": "1:0、2:0、2:1、3:1",
+        "top3": [
+          {
+            "score": "2:0",
+            "prob": 35,
+            "reason": "巴西整体实力碾压，控球率超65%，依靠阵地战两翼传中与中路渗透结合在下半场连续破门，海地全场防守虽顽强但缺乏反击威胁，最终被零封。"
+          },
+          {
+            "score": "3:1",
+            "prob": 25,
+            "reason": "巴西早早破门迫使海地压出，反击空间增大，巴西再入两球锁定胜局，海地利用巴西防线松懈或定位球扳回一城。"
+          },
+          {
+            "score": "1:0",
+            "prob": 20,
+            "reason": "海地超密集防守奏效，巴西久攻不下仅靠定位球或个人灵光一现艰难小胜，符合巴西近期进攻效率偏低的趋势。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "2:0",
+            "prob": 32,
+            "reason": "巴西整体实力碾压，控球率超65%，依靠阵地战两翼传中与中路渗透结合在下半场连续破门，海地全场防守虽顽强但缺乏反击威胁，最终被零封。"
+          },
+          {
+            "score": "3:1",
+            "prob": 26,
+            "reason": "巴西早早破门迫使海地压出，反击空间增大，巴西再入两球锁定胜局，海地利用巴西防线松懈或定位球扳回一城。"
+          },
+          {
+            "score": "1:0",
+            "prob": 24,
+            "reason": "海地超密集防守奏效，巴西久攻不下仅靠定位球或个人灵光一现艰难小胜，符合巴西近期进攻效率偏低的趋势。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "2:0",
+          "prob": 39,
+          "reason": "巴西整体实力碾压，控球率超65%，依靠阵地战两翼传中与中路渗透结合在下半场连续破门，海地全场防守虽顽强但缺乏反击威胁，最终被零封。"
+        },
+        {
+          "score": "3:1",
+          "prob": 31,
+          "reason": "巴西早早破门迫使海地压出，反击空间增大，巴西再入两球锁定胜局，海地利用巴西防线松懈或定位球扳回一城。"
+        },
+        {
+          "score": "1:0",
+          "prob": 29,
+          "reason": "海地超密集防守奏效，巴西久攻不下仅靠定位球或个人灵光一现艰难小胜，符合巴西近期进攻效率偏低的趋势。"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "Brazil",
+      "team_b_en": "Haiti",
+      "match_date": "2026-06-20T09:00:00+08:00",
+      "date_display": "09:00 北京时间",
+      "stage": "C组第1轮",
+      "stats_a": {
+        "name": "Brazil",
+        "cn_name": "巴西",
+        "rank": 3,
+        "confederation": "南美",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Haiti",
+        "cn_name": "海地",
+        "rank": 84,
+        "confederation": "北美",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Brazil",
+        "team_b": "Haiti",
+        "total": 4,
+        "wins_a": 1,
+        "wins_b": 2,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Brazil",
+            "away": "Haiti",
+            "score": "3:0"
+          },
+          {
+            "date": "2022",
+            "home": "Brazil",
+            "away": "Haiti",
+            "score": "3:3"
+          },
+          {
+            "date": "2021",
+            "home": "Brazil",
+            "away": "Haiti",
+            "score": "2:2"
+          },
+          {
+            "date": "2019",
+            "home": "Brazil",
+            "away": "Haiti",
+            "score": "0:0"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 58,
+        "quality": "中",
+        "critical": false,
+        "warnings": [
+          "Haiti 近10场数据缺失",
+          "H2H 数据源为估算值，非真实API数据",
+          "排名差距极大(3 vs 84)，注意爆冷"
+        ],
+        "details": {
+          "Brazil": "football-data.org 实时数据",
+          "Haiti": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-19T18:39:53.073915"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "土耳其",
+      "team_b": "巴拉圭",
+      "data_driven": {
+        "exp_goals_a": 2.0,
+        "exp_goals_b": 1.5,
+        "score": 0.833,
+        "reason": "数据驱动: xG 2.0:1.5, 状态0.0/0.0"
+      },
+      "ai_analysis": {
+        "style": "预计本场节奏偏慢，土耳其倾向主动控球组织进攻，巴拉圭则将依靠防守反击与定位球寻找机会。双方近况低迷，可能以稳为主，场面不会过于开放。",
+        "tactics": "土耳其采用4-2-3-1阵型，通过边路传中和前腰串联制造威胁，防线回追速度较慢需警惕对手反击。巴拉圭以5-4-1或4-4-2深度落位，压缩中路空间，进攻端依赖边翼卫前插和高球争顶，反击时快速通过中场直接找前锋。",
+        "key_duel": "土耳其前腰／边锋与巴拉圭边翼卫／边中卫之间的一对一攻防。土耳其若能在肋部打出小范围配合，可撕开防线；巴拉圭左路传中质量将直接考验土耳其的高空防守。",
+        "key_factor": "1. 土耳其开局能否早破密集防守——若前20分钟取得进球，将迫使巴拉圭阵型前压，暴露身后空当。2. 巴拉圭定位球第一落点争夺——这是其最可能得分的手段，土耳其必须减少禁区前沿的犯规。",
+        "risk": "红黄牌可能改变人数均衡，两队防守动作都偏大，巴拉圭在落后时容易情绪急躁。伤病影响方面，若土耳其主力中卫缺阵，高空球风险将加大。心态上，连败压力可能导致土耳其球员患得患失。天气因素若遇高温，对攻方体能消耗更大，有利于防守方。",
+        "score_range": "2:0 至 2:1 (土耳其小胜或平局)",
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 38,
+            "reason": "土耳其占据主场之利，历史交锋略占心理优势，进攻端个人能力更突出，但防线的漏洞仍可能让巴拉圭通过反击或定位球打入一球。"
+          },
+          {
+            "score": "1:1",
+            "prob": 28,
+            "reason": "双方状态均不理想且防守都存在明显短板，保守心态下进球不会太多，巴拉圭凭借顽强防守逼得平局可能性不小。"
+          },
+          {
+            "score": "3:1",
+            "prob": 15,
+            "reason": "土耳其若能早早打破僵局并利用对手压上空当，有机会扩大比分，但自身防线并不稳固，不失球难度较大。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 35,
+            "reason": "土耳其占据主场之利，历史交锋略占心理优势，进攻端个人能力更突出，但防线的漏洞仍可能让巴拉圭通过反击或定位球打入一球。"
+          },
+          {
+            "score": "1:1",
+            "prob": 29,
+            "reason": "双方状态均不理想且防守都存在明显短板，保守心态下进球不会太多，巴拉圭凭借顽强防守逼得平局可能性不小。"
+          },
+          {
+            "score": "3:1",
+            "prob": 19,
+            "reason": "土耳其若能早早打破僵局并利用对手压上空当，有机会扩大比分，但自身防线并不稳固，不失球难度较大。"
+          }
+        ],
+        "note": "已加入波动性修正（伤病/赛制/心理因素）"
+      },
+      "final_predictions": [
+        {
+          "score": "2:1",
+          "prob": 42,
+          "reason": "土耳其占据主场之利，历史交锋略占心理优势，进攻端个人能力更突出，但防线的漏洞仍可能让巴拉圭通过反击或定位球打入一球。"
+        },
+        {
+          "score": "1:1",
+          "prob": 34,
+          "reason": "双方状态均不理想且防守都存在明显短板，保守心态下进球不会太多，巴拉圭凭借顽强防守逼得平局可能性不小。"
+        },
+        {
+          "score": "3:1",
+          "prob": 22,
+          "reason": "土耳其若能早早打破僵局并利用对手压上空当，有机会扩大比分，但自身防线并不稳固，不失球难度较大。"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "Turkey",
+      "team_b_en": "Paraguay",
+      "match_date": "2026-06-20T12:00:00+08:00",
+      "date_display": "12:00 北京时间",
+      "stage": "D组第1轮",
+      "stats_a": {
+        "name": "Turkey",
+        "cn_name": "土耳其",
+        "rank": 44,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 2.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 2.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 1.5
+        },
+        "away": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 2.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Paraguay",
+        "cn_name": "巴拉圭",
+        "rank": 33,
+        "confederation": "南美",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 2,
+          "losses": 4,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 3.0
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 4.2
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Turkey",
+        "team_b": "Paraguay",
+        "total": 6,
+        "wins_a": 2,
+        "wins_b": 2,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Turkey",
+            "away": "Paraguay",
+            "score": "3:2"
+          },
+          {
+            "date": "2023",
+            "home": "Turkey",
+            "away": "Paraguay",
+            "score": "1:2"
+          },
+          {
+            "date": "2017",
+            "home": "Turkey",
+            "away": "Paraguay",
+            "score": "3:0"
+          },
+          {
+            "date": "2019",
+            "home": "Turkey",
+            "away": "Paraguay",
+            "score": "2:3"
+          },
+          {
+            "date": "2005",
+            "home": "Turkey",
+            "away": "Paraguay",
+            "score": "2:3"
+          },
+          {
+            "date": "2010",
+            "home": "Turkey",
+            "away": "Paraguay",
+            "score": "3:3"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 58,
+        "quality": "中",
+        "critical": false,
+        "warnings": [
+          "Turkey 近10场数据缺失",
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "Turkey": "football-data.org 实时数据",
+          "Paraguay": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-19T19:01:56.575843"
+      },
+      "critical": false,
+      "data_completeness": 100
+    }
+  ],
+  "generated_at": "2026-06-19T19:02:07.529037"
+}
