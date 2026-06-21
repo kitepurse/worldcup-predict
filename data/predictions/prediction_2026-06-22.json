@@ -1,0 +1,926 @@
+{
+  "date": "2026-06-22",
+  "predictions": [
+    {
+      "team_a": "西班牙",
+      "team_b": "沙特阿拉伯",
+      "data_driven": {
+        "xg_a": 4.11,
+        "xg_b": 0.5,
+        "elo_a": 2064,
+        "elo_b": 1646,
+        "elo_gap": 418,
+        "h2h_bonus": -16,
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 37,
+            "reason": "Elo+Poisson xG=4.1:0.5"
+          },
+          {
+            "score": "2:0",
+            "prob": 32,
+            "reason": "Elo+Poisson xG=4.1:0.5"
+          },
+          {
+            "score": "4:0",
+            "prob": 31,
+            "reason": "Elo+Poisson xG=4.1:0.5"
+          }
+        ],
+        "score": 0.893,
+        "reason": "Elo: 2064 vs 1646 (差418) | xG 4.11:0.5"
+      },
+      "ai_analysis": {
+        "style": "西班牙将主导传控节奏，通过高位压迫和边中结合撕破防线；沙特阿拉伯预计采取深度防守反击策略，力图压缩空间并利用速度偷袭。比赛节奏可能呈现半场攻防演练态势，西班牙控球率有望超过70%。",
+        "tactics": "西班牙预计使用4-3-3阵型，以布斯克茨、佩德里等掌控中场，两翼边锋频繁内切与套边，中锋莫拉塔提供支点和终结。沙特大概率摆出5-4-1大巴，防线收紧保护中路，切断西班牙短传渗透，得球后快速通过中场找边锋或谢赫里冲击对手身后。双方实力差距巨大，西班牙进攻耐心与沙特防守专注度将决定破局时间点。",
+        "key_duel": "西班牙锋线三叉戟 vs 沙特中卫组合+门将。沙特中卫布莱希、坦巴蒂必须在一对一防守和定位球中绝对专注，门将奥韦斯需做出多次扑救；而西班牙前锋莫拉塔的跑位抢点以及费兰·托雷斯、亚马尔等人的突破，将是敲开密集防线的关键。中场层面，西班牙对球权的绝对控制将剥夺沙特反击赖以生存的传球线路。",
+        "key_factor": "西班牙的破僵能力与耐心。沙特此前对阵强队经常能坚守半场，若西班牙久攻不下易急躁，一旦早进球比赛将迅速失去悬念；反之沙特若率先偷袭得手，则可能打乱西班牙部署。定位球亦是强攻利器，西班牙中卫拉波尔特、勒诺尔芒的前插争顶可能成为打开局面的胜负手。",
+        "risk": "西班牙近10场国际赛数据缺失（可能因友谊赛或数据未更新），实际状态不明；沙特在2022世界杯曾爆冷击败阿根廷，具备大场面顽强属性。红黄牌影响：沙特防守动作过大可能导致减员，反而更早崩溃；西班牙需防反击时后卫身后暴露。天气方面，若比赛在高温高湿条件下进行，对西班牙高位消耗体能是不利因素。",
+        "score_range": "3:0 ~ 5:0",
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 37,
+            "reason": "泊松分布TOP1，西班牙碾压式控球与多点进攻，下半场沙特体能下降防线松动，三球完胜概率最高。"
+          },
+          {
+            "score": "2:0",
+            "prob": 32,
+            "reason": "沙特密集防守顽强，西班牙破门较晚，最终仅以两球优势获胜，符合历史多次杯赛强队小胜模式。"
+          },
+          {
+            "score": "4:0",
+            "prob": 31,
+            "reason": "一旦早进球，沙特被迫压出后留下巨大空当，西班牙反击与边锋突破将扩大比分，四球大胜有较高可能。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 42,
+            "reason": "泊松分布TOP1，西班牙碾压式控球与多点进攻，下半场沙特体能下降防线松动，三球完胜概率最高。"
+          },
+          {
+            "score": "2:0",
+            "prob": 33,
+            "reason": "沙特密集防守顽强，西班牙破门较晚，最终仅以两球优势获胜，符合历史多次杯赛强队小胜模式。"
+          },
+          {
+            "score": "4:0",
+            "prob": 29,
+            "reason": "一旦早进球，沙特被迫压出后留下巨大空当，西班牙反击与边锋突破将扩大比分，四球大胜有较高可能。"
+          }
+        ],
+        "note": "波动修正(Elo差418)"
+      },
+      "final_predictions": [
+        {
+          "score": "3:0",
+          "prob": 28,
+          "reason": "泊松分布TOP1，西班牙碾压式控球与多点进攻，下半场沙特体能下降防线松动，三球完胜概率最高。"
+        },
+        {
+          "score": "2:0",
+          "prob": 22,
+          "reason": "沙特密集防守顽强，西班牙破门较晚，最终仅以两球优势获胜，符合历史多次杯赛强队小胜模式。"
+        },
+        {
+          "score": "4:0",
+          "prob": 20,
+          "reason": "一旦早进球，沙特被迫压出后留下巨大空当，西班牙反击与边锋突破将扩大比分，四球大胜有较高可能。"
+        }
+      ],
+      "confidence": "低",
+      "team_a_en": "Spain",
+      "team_b_en": "Saudi Arabia",
+      "match_date": "2026-06-22T00:00:00+08:00",
+      "date_display": "00:00 北京时间",
+      "stage": "H组第1轮",
+      "stats_a": {
+        "name": "Spain",
+        "cn_name": "西班牙",
+        "rank": 8,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "away": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Saudi Arabia",
+        "cn_name": "沙特阿拉伯",
+        "rank": 53,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Spain",
+        "team_b": "Saudi Arabia",
+        "total": 5,
+        "wins_a": 1,
+        "wins_b": 3,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Spain",
+            "away": "Saudi Arabia",
+            "score": "0:0"
+          },
+          {
+            "date": "2023",
+            "home": "Spain",
+            "away": "Saudi Arabia",
+            "score": "2:0"
+          },
+          {
+            "date": "2015",
+            "home": "Spain",
+            "away": "Saudi Arabia",
+            "score": "2:2"
+          },
+          {
+            "date": "2010",
+            "home": "Spain",
+            "away": "Saudi Arabia",
+            "score": "0:2"
+          },
+          {
+            "date": "2017",
+            "home": "Spain",
+            "away": "Saudi Arabia",
+            "score": "1:1"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 43,
+        "quality": "低",
+        "critical": false,
+        "warnings": [
+          "Spain 近10场数据缺失",
+          "H2H 数据源为估算值，非真实API数据",
+          "Spain 进球/失球数据均为零，可能源数据错误"
+        ],
+        "details": {
+          "Spain": "football-data.org 实时数据",
+          "Saudi Arabia": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-21T20:03:54.673223"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "比利时",
+      "team_b": "伊朗",
+      "data_driven": {
+        "xg_a": 2.38,
+        "xg_b": 1.13,
+        "elo_a": 2115,
+        "elo_b": 1935,
+        "elo_gap": 180,
+        "h2h_bonus": 5,
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 37,
+            "reason": "Elo+Poisson xG=2.4:1.1"
+          },
+          {
+            "score": "2:0",
+            "prob": 33,
+            "reason": "Elo+Poisson xG=2.4:1.1"
+          },
+          {
+            "score": "1:1",
+            "prob": 31,
+            "reason": "Elo+Poisson xG=2.4:1.1"
+          }
+        ],
+        "score": 0.679,
+        "reason": "Elo: 2115 vs 1935 (差180) | xG 2.38:1.13"
+      },
+      "ai_analysis": {
+        "style": "比利时主导控球与阵地进攻，节奏较快；伊朗收缩防线，强调身体对抗与快速反击，比赛可能呈现攻防演练局面。",
+        "tactics": "比利时预计使用3-4-2-1或4-2-3-1阵型，依靠边翼卫插上和德布劳内的创造性直塞，利用卢卡库的支点作用与后排插上形成多层次攻击。伊朗大概率采用4-5-1或5-4-1深度防守阵型，中场绞杀，进攻端依赖塔雷米和阿兹蒙的反击速度与定位球，边路传中找高点。",
+        "key_duel": "卢卡库 vs 伊朗双中卫（如侯赛尼、卡纳尼等）：比利时中锋的背身拿球与头球争顶直接考验伊朗防空与盯人纪律。德布劳内 vs 伊扎图拉希：比利时核心的中路渗透与远射需要伊朗后腰的贴身限制，中场控制权决定比利时进攻流畅度。",
+        "key_factor": "比利时开场30分钟的破僵能力：若早早进球，伊朗被迫阵型前移，空档增大，比利时可能扩大比分；若半场闷平，伊朗越守越有信心，比利时心理压力增加，平局概率上升。",
+        "risk": "比利时近期比赛记录有限，磨合存疑；伊朗防守韧性极强，历史交锋不乏逼平和爆冷记录（如2021年曾0:2告负）。此外，伊朗球员善于利用少数反击机会制造红黄牌或定位球得分，若比利时后防失误，可能丢球。高温或密集赛程对老将体能的影响也是变量。",
+        "score_range": "1-0至3-1之间，比利时赢面较大但不排除平局。",
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 37,
+            "reason": "泊松分布首选，符合比利时进攻输出和伊朗反击威胁，历史交锋多次出现双方进球，比利时一球小胜最为合理。"
+          },
+          {
+            "score": "2:0",
+            "prob": 33,
+            "reason": "比利时若较早破门并控制节奏，零封概率高；伊朗攻击力有限，比利时防线可专注封锁。"
+          },
+          {
+            "score": "1:1",
+            "prob": 30,
+            "reason": "伊朗的密集防守可能让比利时久攻不下，一次反击或定位球即可能扳平，模型显示双方进球平局仍有显著发生可能。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "2:1",
+            "prob": 35,
+            "reason": "泊松分布首选，符合比利时进攻输出和伊朗反击威胁，历史交锋多次出现双方进球，比利时一球小胜最为合理。"
+          },
+          {
+            "score": "2:0",
+            "prob": 34,
+            "reason": "比利时若较早破门并控制节奏，零封概率高；伊朗攻击力有限，比利时防线可专注封锁。"
+          },
+          {
+            "score": "1:1",
+            "prob": 25,
+            "reason": "伊朗的密集防守可能让比利时久攻不下，一次反击或定位球即可能扳平，模型显示双方进球平局仍有显著发生可能。"
+          }
+        ],
+        "note": "波动修正(Elo差180)"
+      },
+      "final_predictions": [
+        {
+          "score": "2:1",
+          "prob": 37,
+          "reason": "泊松分布首选，符合比利时进攻输出和伊朗反击威胁，历史交锋多次出现双方进球，比利时一球小胜最为合理。"
+        },
+        {
+          "score": "2:0",
+          "prob": 34,
+          "reason": "比利时若较早破门并控制节奏，零封概率高；伊朗攻击力有限，比利时防线可专注封锁。"
+        },
+        {
+          "score": "1:1",
+          "prob": 29,
+          "reason": "伊朗的密集防守可能让比利时久攻不下，一次反击或定位球即可能扳平，模型显示双方进球平局仍有显著发生可能。"
+        }
+      ],
+      "confidence": "中",
+      "team_a_en": "Belgium",
+      "team_b_en": "Iran",
+      "match_date": "2026-06-22T03:00:00+08:00",
+      "date_display": "03:00 北京时间",
+      "stage": "G组第1轮",
+      "stats_a": {
+        "name": "Belgium",
+        "cn_name": "比利时",
+        "rank": 5,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Iran",
+        "cn_name": "伊朗",
+        "rank": 22,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 1.5
+        },
+        "away": {
+          "avg_goals_for": 1.7,
+          "avg_goals_against": 2.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Belgium",
+        "team_b": "Iran",
+        "total": 7,
+        "wins_a": 3,
+        "wins_b": 2,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "3:1"
+          },
+          {
+            "date": "2020",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "0:0"
+          },
+          {
+            "date": "2021",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "3:2"
+          },
+          {
+            "date": "2019",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "3:1"
+          },
+          {
+            "date": "2021",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "0:2"
+          },
+          {
+            "date": "2020",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "3:3"
+          },
+          {
+            "date": "2007",
+            "home": "Belgium",
+            "away": "Iran",
+            "score": "1:2"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 88,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "Belgium": "football-data.org 实时数据",
+          "Iran": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-21T20:04:28.876788"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "乌拉圭",
+      "team_b": "佛得角",
+      "data_driven": {
+        "xg_a": 4.27,
+        "xg_b": 0.5,
+        "elo_a": 1984,
+        "elo_b": 1536,
+        "elo_gap": 448,
+        "h2h_bonus": -26,
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 37,
+            "reason": "Elo+Poisson xG=4.3:0.5"
+          },
+          {
+            "score": "4:0",
+            "prob": 33,
+            "reason": "Elo+Poisson xG=4.3:0.5"
+          },
+          {
+            "score": "2:0",
+            "prob": 31,
+            "reason": "Elo+Poisson xG=4.3:0.5"
+          }
+        ],
+        "score": 0.908,
+        "reason": "Elo: 1984 vs 1536 (差448) | xG 4.27:0.5"
+      },
+      "ai_analysis": {
+        "style": "乌拉圭将依靠高位逼抢和快速边中结合主导比赛节奏，佛得角预计全线退守5-4-1阵型，比赛可能演变为半场攻防演练，节奏由乌拉圭完全掌控。",
+        "tactics": "乌拉圭采用4-3-3阵型，利用努涅斯的速度冲击防线身后，巴尔韦德负责后插上远射，边后卫积极套上传中。佛得角排出5-4-1低位大巴，试图通过门德斯的长传找单前锋打反击，但中场几乎放弃控球权。",
+        "key_duel": "努涅斯 vs 佛得角中卫组合：佛得角中卫转身偏慢且不擅长应对持续冲击，努涅斯的爆发力和无球跑动将反复考验这条高龄防线，一旦形成单点突破，比分很可能迅速拉开。",
+        "key_factor": "乌拉圭的早期进球能力：如果前20分钟破门，佛得角必须阵型前压，空档将比分差扩大至3球以上；若僵局持续，佛得角信心积累可能制造变数，但历史交锋的心理劣势已衰减。",
+        "risk": "佛得角门将查尔斯可能有超常发挥（近几场友谊赛扑救率极高）；乌拉圭若过早进球后轮换留力，可能控制在2-3球净胜而非4球以上；裁判尺度若偏松，佛得角犯规战术会破坏节奏。",
+        "score_range": "3:0 至 5:0",
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 37,
+            "reason": "泊松分布主推比分，反映双方期望进球差（4.27-0.50），乌拉圭全场压制但错失部分机会，佛得角零射正。"
+          },
+          {
+            "score": "4:0",
+            "prob": 33,
+            "reason": "乌拉圭把握角球和远射第二落点能力突出，若下半场佛得角体力下降，替补登场扩大比分，符合Elo差>400的至少3球规则。"
+          },
+          {
+            "score": "2:0",
+            "prob": 15,
+            "reason": "可能性较低的保守选项，基于乌拉圭可能提前留力，但仍确保零封，需警惕历史交锋佛得角曾多次逼平，但世界杯正赛实力鸿沟更明显。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 42,
+            "reason": "泊松分布主推比分，反映双方期望进球差（4.27-0.50），乌拉圭全场压制但错失部分机会，佛得角零射正。"
+          },
+          {
+            "score": "4:0",
+            "prob": 34,
+            "reason": "乌拉圭把握角球和远射第二落点能力突出，若下半场佛得角体力下降，替补登场扩大比分，符合Elo差>400的至少3球规则。"
+          },
+          {
+            "score": "2:0",
+            "prob": 13,
+            "reason": "可能性较低的保守选项，基于乌拉圭可能提前留力，但仍确保零封，需警惕历史交锋佛得角曾多次逼平，但世界杯正赛实力鸿沟更明显。"
+          }
+        ],
+        "note": "波动修正(Elo差448)"
+      },
+      "final_predictions": [
+        {
+          "score": "3:0",
+          "prob": 30,
+          "reason": "泊松分布主推比分，反映双方期望进球差（4.27-0.50），乌拉圭全场压制但错失部分机会，佛得角零射正。"
+        },
+        {
+          "score": "4:0",
+          "prob": 24,
+          "reason": "乌拉圭把握角球和远射第二落点能力突出，若下半场佛得角体力下降，替补登场扩大比分，符合Elo差>400的至少3球规则。"
+        },
+        {
+          "score": "2:0",
+          "prob": 15,
+          "reason": "可能性较低的保守选项，基于乌拉圭可能提前留力，但仍确保零封，需警惕历史交锋佛得角曾多次逼平，但世界杯正赛实力鸿沟更明显。"
+        }
+      ],
+      "confidence": "低",
+      "team_a_en": "Uruguay",
+      "team_b_en": "Cape Verde Islands",
+      "match_date": "2026-06-22T06:00:00+08:00",
+      "date_display": "06:00 北京时间",
+      "stage": "H组第1轮",
+      "stats_a": {
+        "name": "Uruguay",
+        "cn_name": "乌拉圭",
+        "rank": 15,
+        "confederation": "南美",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Cape Verde Islands",
+        "cn_name": "佛得角",
+        "rank": 65,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "away": {
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 0.0
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Uruguay",
+        "team_b": "Cape Verde Islands",
+        "total": 6,
+        "wins_a": 0,
+        "wins_b": 4,
+        "draws": 2,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "Uruguay",
+            "away": "Cape Verde Islands",
+            "score": "0:3"
+          },
+          {
+            "date": "2020",
+            "home": "Uruguay",
+            "away": "Cape Verde Islands",
+            "score": "1:1"
+          },
+          {
+            "date": "2019",
+            "home": "Uruguay",
+            "away": "Cape Verde Islands",
+            "score": "1:1"
+          },
+          {
+            "date": "2016",
+            "home": "Uruguay",
+            "away": "Cape Verde Islands",
+            "score": "3:3"
+          },
+          {
+            "date": "2013",
+            "home": "Uruguay",
+            "away": "Cape Verde Islands",
+            "score": "1:2"
+          },
+          {
+            "date": "2005",
+            "home": "Uruguay",
+            "away": "Cape Verde Islands",
+            "score": "2:2"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 43,
+        "quality": "低",
+        "critical": false,
+        "warnings": [
+          "Cape Verde Islands 近10场数据缺失",
+          "H2H 数据源为估算值，非真实API数据",
+          "Cape Verde Islands 进球/失球数据均为零，可能源数据错误"
+        ],
+        "details": {
+          "Uruguay": "football-data.org 实时数据",
+          "Cape Verde Islands": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-21T20:05:05.638708"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "新西兰",
+      "team_b": "埃及",
+      "data_driven": {
+        "xg_a": 0.5,
+        "xg_b": 3.5,
+        "elo_a": 1290,
+        "elo_b": 1830,
+        "elo_gap": 540,
+        "h2h_bonus": 30,
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 37,
+            "reason": "Elo+Poisson xG=0.5:3.5"
+          },
+          {
+            "score": "0:4",
+            "prob": 32,
+            "reason": "Elo+Poisson xG=0.5:3.5"
+          },
+          {
+            "score": "0:2",
+            "prob": 31,
+            "reason": "Elo+Poisson xG=0.5:3.5"
+          }
+        ],
+        "score": 0.032,
+        "reason": "Elo: 1290 vs 1830 (差540) | xG 0.5:3.5"
+      },
+      "ai_analysis": {
+        "style": "预计将是一场典型的非对称攻防战。埃及队将掌控绝对控球权（预计超65%），通过耐心的阵地战和边路渗透来撕开防线，比赛节奏会由他们主导，偏慢且有条理。新西兰队则会采取务实的低位防守策略，阵型大幅回收，压缩禁区空间，寻求通过长传冲吊和定位球机会进行偷袭，其进攻节奏会非常依赖零星的快速反击。",
+        "tactics": "埃及队可能排出4-3-3阵型，利用中场的绝对技术优势进行传导控制，重点打击新西兰防线的两肋，核心战术是围绕萨拉赫的右路内切和传中去创造机会，同时会布置大量远射以破解密集防守。新西兰队铁定会采用5-4-1或4-5-1的防守阵型，三条线保持极度紧凑，切断埃及队向禁区内的传球线路，进攻上主要依赖高中锋（如克里斯-伍德）的支点作用争抢第一落点，以及通过界外球和角球制造混乱。",
+        "key_duel": "穆罕默德·萨拉赫 vs 新西兰边后卫与左中卫结合部。萨拉赫历史级的突破和终结能力是新西兰低位防线面临的最大考验。新西兰边后卫单防能力有限，需要左中卫频繁协防，这必然会导致禁区内出现空隙。如何限制萨拉赫的持球空间和向内传球路线，是新西兰防守体系能否存活的关键。",
+        "key_factor": "新西兰队在防守三区的专注度和纪律性能维持多久。埃及队的技术优势巨大，比赛大概率在半场攻防演练中进行。新西兰能否在前60-70分钟保证不丢球，是积累心理优势和寻求意外进球的根本前提。一旦体能下降或瞬间注意力不集中导致较早丢球，战术体系将瞬间崩溃。",
+        "risk": "1. 埃及队的破局耐心：面对世界排名差距悬殊的对手，如果久攻不下，埃及球员可能出现急躁情绪，导致配合质量下降。2. 新西兰的定位球：这是他们唯一可能得分的稳定武器，克里斯·伍德等人的空中优势在定位球混战中威胁巨大。3. 赛事冷门心态：作为弱势方，新西兰无心理包袱，门将奥利弗·赛欧的超常发挥可能成为比赛变量。4. 天气条件：若比赛在炎热气候下进行，对新西兰的高强度防守体能消耗更大，但利于埃及的技术型控制打法。",
+        "score_range": "0:2, 0:3, 1:3",
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 37,
+            "reason": "Elo评分差距高达540分，强制要求TOP1比分差距≥3球。泊松分布模型同样给出0:3（37%）为最可能结果，这完全符合两队实力的真实鸿沟。埃及的技术与持续施压能力足以在比赛后半段，待对手体能下降后连续取得进球。"
+          },
+          {
+            "score": "0:2",
+            "prob": 31,
+            "reason": "泊松分布中0:2的概率为31%。这反映了新西兰队可能在上半场甚至更长时间里顽强抵抗，但埃及队仍能凭借实力优势打入两球确立胜局，这是一个经典的强队经济型胜利比分。"
+          },
+          {
+            "score": "1:3",
+            "prob": 16,
+            "reason": "考虑到新西兰在历史交锋中有过“爆冷”赢球的记录（最近一次3:2获胜），且拥有定位球得分点，不排除他们利用定位球偶然偷得一分。但整体实力差距决定了这更像是挽回颜面的一球，而埃及队会用更多进球锁定三球差距的胜局。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:3",
+            "prob": 42,
+            "reason": "Elo评分差距高达540分，强制要求TOP1比分差距≥3球。泊松分布模型同样给出0:3（37%）为最可能结果，这完全符合两队实力的真实鸿沟。埃及的技术与持续施压能力足以在比赛后半段，待对手体能下降后连续取得进球。"
+          },
+          {
+            "score": "0:2",
+            "prob": 32,
+            "reason": "泊松分布中0:2的概率为31%。这反映了新西兰队可能在上半场甚至更长时间里顽强抵抗，但埃及队仍能凭借实力优势打入两球确立胜局，这是一个经典的强队经济型胜利比分。"
+          },
+          {
+            "score": "1:3",
+            "prob": 14,
+            "reason": "考虑到新西兰在历史交锋中有过“爆冷”赢球的记录（最近一次3:2获胜），且拥有定位球得分点，不排除他们利用定位球偶然偷得一分。但整体实力差距决定了这更像是挽回颜面的一球，而埃及队会用更多进球锁定三球差距的胜局。"
+          }
+        ],
+        "note": "波动修正(Elo差540)"
+      },
+      "final_predictions": [
+        {
+          "score": "0:3",
+          "prob": 43,
+          "reason": "Elo评分差距高达540分，强制要求TOP1比分差距≥3球。泊松分布模型同样给出0:3（37%）为最可能结果，这完全符合两队实力的真实鸿沟。埃及的技术与持续施压能力足以在比赛后半段，待对手体能下降后连续取得进球。"
+        },
+        {
+          "score": "0:2",
+          "prob": 34,
+          "reason": "泊松分布中0:2的概率为31%。这反映了新西兰队可能在上半场甚至更长时间里顽强抵抗，但埃及队仍能凭借实力优势打入两球确立胜局，这是一个经典的强队经济型胜利比分。"
+        },
+        {
+          "score": "0:4",
+          "prob": 23,
+          "reason": "Poisson补充 xG=0.5:3.5"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "New Zealand",
+      "team_b_en": "Egypt",
+      "match_date": "2026-06-22T09:00:00+08:00",
+      "date_display": "09:00 北京时间",
+      "stage": "G组第1轮",
+      "stats_a": {
+        "name": "New Zealand",
+        "cn_name": "新西兰",
+        "rank": 90,
+        "confederation": "大洋洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 2.0,
+          "avg_goals_against": 2.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 2.3,
+          "avg_goals_against": 1.5
+        },
+        "away": {
+          "avg_goals_for": 1.7,
+          "avg_goals_against": 2.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Egypt",
+        "cn_name": "埃及",
+        "rank": 30,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 1,
+          "losses": 0,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last30": {
+          "wins": 2,
+          "draws": 5,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 1.0
+        },
+        "last5": {
+          "trend": "D"
+        },
+        "home": {
+          "avg_goals_for": 1.1,
+          "avg_goals_against": 0.8
+        },
+        "away": {
+          "avg_goals_for": 0.8,
+          "avg_goals_against": 1.1
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "New Zealand",
+        "team_b": "Egypt",
+        "total": 4,
+        "wins_a": 3,
+        "wins_b": 0,
+        "draws": 1,
+        "matches": [
+          {
+            "date": "2025",
+            "home": "New Zealand",
+            "away": "Egypt",
+            "score": "3:2"
+          },
+          {
+            "date": "2023",
+            "home": "New Zealand",
+            "away": "Egypt",
+            "score": "1:0"
+          },
+          {
+            "date": "2017",
+            "home": "New Zealand",
+            "away": "Egypt",
+            "score": "3:1"
+          },
+          {
+            "date": "2022",
+            "home": "New Zealand",
+            "away": "Egypt",
+            "score": "0:0"
+          }
+        ],
+        "source": "fallback_estimate"
+      },
+      "validation": {
+        "score": 88,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 数据源为估算值，非真实API数据"
+        ],
+        "details": {
+          "New Zealand": "football-data.org 实时数据",
+          "Egypt": "football-data.org 实时数据"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "fallback_estimate"
+        },
+        "checked_at": "2026-06-21T20:05:35.054831"
+      },
+      "critical": false,
+      "data_completeness": 100
+    }
+  ],
+  "generated_at": "2026-06-21T20:05:57.860300"
+}
