@@ -48,8 +48,9 @@ def _expected_goals(elo_a, elo_b, rank_a=None, rank_b=None):
     xg_b = total_xg * (1.0 - p_a_win)
 
     # 下限保护 + 上限保护
-    xg_a = max(0.4, min(4.5, xg_a))
-    xg_b = max(0.3, min(3.5, xg_b))
+    # 弱队最低xG=0.5（世界杯级别，再弱也有一定进攻能力）
+    xg_a = max(0.5, min(4.5, xg_a))
+    xg_b = max(0.5, min(3.5, xg_b))
 
     return round(xg_a, 2), round(xg_b, 2), round(elo_gap)
 
@@ -72,13 +73,21 @@ def _poisson_prob(lam, k):
 
 
 def _score_matrix(xg_a, xg_b, max_goals=8):
-    """生成比分概率矩阵，返回 TOP N 比分及概率"""
+    """生成比分概率矩阵，返回 TOP N 比分及概率。
+    加入「垃圾时间」相关性修正：强队进3球以上时弱队xG提升（防线崩/松懈）"""
     scores = []
     for a in range(max_goals + 1):
         for b in range(max_goals + 1):
             prob_a = _poisson_prob(xg_a, a)
-            prob_b = _poisson_prob(xg_b, b)
-            # 独立泊松假设（简化：实际进球有微弱相关性，但可忽略）
+
+            # 垃圾时间修正：强队进3+时，弱队xG提升（防线崩/松懈/面子球）
+            if a >= 3 and xg_a > 2.0:
+                boost = 1.0 + (a - 2) * 0.35  # 3球=+35%, 4球=+70%, 5球=+105%
+                adjusted_xg_b = xg_b * boost
+                prob_b = _poisson_prob(adjusted_xg_b, b)
+            else:
+                prob_b = _poisson_prob(xg_b, b)
+
             joint_prob = prob_a * prob_b
             if joint_prob > 0.001:  # 过滤极低概率
                 scores.append({
