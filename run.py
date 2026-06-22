@@ -66,7 +66,17 @@ def main():
 
         # 交叉验证
         validation = cross_check(home, away, stats_h, stats_a, h2h)
-        print(f"  数据可信度: {validation['score']}/100", flush=True)
+        print(f"  数据可信度: {validation['score']}/100 ({validation['quality']})", flush=True)
+        if validation.get("warnings"):
+            for w in validation["warnings"]:
+                print(f"    ⚠ {w}", flush=True)
+
+        # ===== 质量门禁 =====
+        # 数据质量"不可靠"时跳过预测，避免输出大量估算值
+        if validation["quality"] == "不可靠":
+            print(f"  🚫 数据质量不可靠（{validation['score']}/100），跳过此场预测", flush=True)
+            print(f"    原因: {'; '.join(validation['warnings'])}", flush=True)
+            continue
 
         # 预测
         result = predict_match(home, away, stats_h, stats_a, h2h)
@@ -83,9 +93,9 @@ def main():
         result["validation"] = validation
         result["critical"] = validation.get("critical", False)
         # 低质量数据：降低预测置信度
-        if validation["quality"] == "低":
+        if validation["quality"] in ("低", "不可靠"):
             result["confidence"] = "低"
-            result["final_predictions"] = [{**fp, "prob": max(5, fp["prob"] - 10)} for fp in result["final_predictions"]]
+            result["final_predictions"] = [{**fp, "prob": max(3, fp["prob"] - 12)} for fp in result["final_predictions"]]
         result["data_completeness"] = completeness_check({"stats": stats_h, "h2h": h2h, "form": stats_h.get("last5"), "rank": stats_h.get("rank")})
         predictions.append(result)
 

@@ -25,21 +25,33 @@ def cross_check(team_a, team_b, stats_a, stats_b, h2h):
     src_h2h = (h2h or {}).get("source", "fallback")
 
     fallback_count = 0
+    estimate_count = 0
     for name, src in [(team_a, src_a), (team_b, src_b), ("H2H", src_h2h)]:
-        if not src or src == "fallback" or "fallback" in str(src):
+        src_str = str(src) if src else ""
+        if not src or "fallback" in src_str or "generic" in src_str:
             fallback_count += 1
             score -= 12
             warnings.append(f"{name} 数据源为估算值，非真实API数据")
-        elif "football-data" in str(src):
-            details[name] = f"football-data.org 实时数据"
-        elif "+" in str(src):
-            parts = [s for s in str(src).split("+") if s and s != "fallback"]
+        elif "estimate" in src_str:
+            estimate_count += 1
+            score -= 6
+            warnings.append(f"{name} 为有依据估算（非真实比赛数据）")
+        elif "football-data" in src_str or "api-football" in src_str:
+            details[name] = f"真实API数据 ({src_str})"
+        elif "+" in src_str:
+            parts = [s for s in src_str.split("+") if s and s not in ("fallback", "estimate")]
             if parts:
                 details[name] = f"{len(parts)}源交叉验证 ({', '.join(parts)})"
+            else:
+                estimate_count += 1
+                score -= 6
 
     if fallback_count >= 2:
         critical = True
-        warnings.append(f"⚠ 超过半数数据为估算值，预测可靠性大幅降低")
+        warnings.append(f"⚠ 超过半数数据为完全估算值(无真实数据)，预测可靠性极低")
+    elif fallback_count >= 1 and estimate_count >= 1:
+        critical = True
+        warnings.append(f"⚠ 至少一项数据完全缺失，预测有较大不确定性")
 
     # 3. 数据合理性
     for name, st, data in [(team_a, stats_a, a10), (team_b, stats_b, b10)]:
@@ -65,7 +77,7 @@ def cross_check(team_a, team_b, stats_a, stats_b, h2h):
         score -= 5
         warnings.append("无历史交锋数据")
 
-    quality = "高" if score >= 80 else "中" if score >= 50 else "低"
+    quality = "高" if score >= 80 else "中" if score >= 60 else "低" if score >= 40 else "不可靠"
 
     return {
         "score": max(0, score),

@@ -3,14 +3,30 @@ import json, os, re, time, math
 from urllib.request import Request, urlopen
 
 # ============================================================
-# Elo 评分体系 — 基于 FIFA 世界排名换算
+# Elo 评分体系 — 真实 Elo 优先，FIFA 排名换算兜底
 # ============================================================
 
 def _fifa_rank_to_elo(rank):
-    """FIFA排名 → Elo评分 (2200~1200)"""
+    """FIFA排名 → Elo评分 (2200~1200) — 仅兜底使用"""
     if not rank or rank > 200:
         return 1500
     return max(1200, min(2200, 2200 - (rank - 1) * 10))
+
+
+def _get_team_elo(team_name, stats):
+    """获取球队 Elo 评分：真实 Elo > FIFA 排名换算"""
+    # 尝试从 elo_fetcher 获取真实 Elo
+    try:
+        from modules.elo_fetcher import get_real_elo
+        real_elo = get_real_elo(team_name)
+        if real_elo:
+            return real_elo, "real_elo"
+    except Exception:
+        pass
+
+    # 兜底：FIFA 排名换算
+    rank = (stats or {}).get("rank", 50)
+    return _fifa_rank_to_elo(rank), "rank_converted"
 
 
 HOME_ADVANTAGE = 50  # 世界杯中立场地，弱主场优势（赛程排前面的队略占优）
@@ -126,12 +142,18 @@ def _poisson_top3(xg_a, xg_b):
 def layer1_elo_poisson(stats_a, stats_b, h2h):
     """Elo评分 + 泊松分布 数据驱动预测"""
     if not stats_a or not stats_b:
-        return {"xg_a": 1.3, "xg_b": 1.2, "elo_gap": 0, "top3": [], "score": 0.5}
+        return {"xg_a": 1.3, "xg_b": 1.2, "elo_gap": 0, "top3": [], "score": 0.5,
+                "elo_source": "none"}
 
     rank_a = (stats_a or {}).get("rank", 50)
     rank_b = (stats_b or {}).get("rank", 50)
-    elo_a = _fifa_rank_to_elo(rank_a)
-    elo_b = _fifa_rank_to_elo(rank_b)
+
+    # 优先使用真实 Elo（eloratings.net），FIFA 排名换算兜底
+    team_a = (stats_a or {}).get("name", "")
+    team_b = (stats_b or {}).get("name", "")
+    elo_a, elo_src_a = _get_team_elo(team_a, stats_a)
+    elo_b, elo_src_b = _get_team_elo(team_b, stats_b)
+    elo_source = "real_elo" if (elo_src_a == "real_elo" or elo_src_b == "real_elo") else "rank_converted"
 
     # 近期状态修正 Elo（±50 分）
     a10 = stats_a.get("last10", {})
@@ -159,10 +181,11 @@ def layer1_elo_poisson(stats_a, stats_b, h2h):
         "xg_a": xg_a, "xg_b": xg_b,
         "elo_a": elo_a, "elo_b": elo_b,
         "elo_gap": elo_gap,
+        "elo_source": elo_source,
         "h2h_bonus": h2h_bonus,
         "top3": top3,
         "score": score,
-        "reason": f"Elo: {elo_a} vs {elo_b} (差{elo_gap}) | xG {xg_a}:{xg_b}",
+        "reason": f"Elo({elo_source}): {elo_a} vs {elo_b} (差{elo_gap}) | xG {xg_a}:{xg_b}",
     }
 
 
