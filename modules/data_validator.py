@@ -23,15 +23,22 @@ def cross_check(team_a, team_b, stats_a, stats_b, h2h):
     src_a = (stats_a or {}).get("source", "fallback")
     src_b = (stats_b or {}).get("source", "fallback")
     src_h2h = (h2h or {}).get("source", "fallback")
+    qual_a = (stats_a or {}).get("data_quality", "fallback")
+    qual_b = (stats_b or {}).get("data_quality", "fallback")
 
     fallback_count = 0
     estimate_count = 0
-    for name, src in [(team_a, src_a), (team_b, src_b), ("H2H", src_h2h)]:
+    for name, src, qual in [(team_a, src_a, qual_a), (team_b, src_b, qual_b), ("H2H", src_h2h, None)]:
         src_str = str(src) if src else ""
         if not src or "fallback" in src_str or "generic" in src_str:
             fallback_count += 1
             score -= 12
-            warnings.append(f"{name} 数据源为估算值，非真实API数据")
+            warnings.append(f"{name} 数据源完全缺失，为兜底估算值")
+        elif qual == "fallback" and name != "H2H":
+            # data_quality=fallback 但 source 没标记为 fallback → 强制按 fallback 处理
+            fallback_count += 1
+            score -= 12
+            warnings.append(f"{name} 数据质量标记为fallback，增加扣分")
         elif "estimate" in src_str:
             estimate_count += 1
             score -= 6

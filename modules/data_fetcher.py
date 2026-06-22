@@ -510,11 +510,14 @@ def _team_from_fallback(name, info):
     }
     mult = conf_multiplier.get(conf, 1.0)
 
+    # 未知大洲 → 标记为 fallback（无依据估算），已知大洲 → estimate
+    source_tag = f"conf_estimate({conf})" if conf != "未知" else "fallback(unknown)"
+
     return {
         "wins": wins, "draws": draws, "losses": losses,
         "avg_goals_for": round(att * mult, 1),
         "avg_goals_against": round(df * mult * 0.85, 1),
-        "source": f"conf_estimate({conf})",
+        "source": source_tag,
     }
 
 

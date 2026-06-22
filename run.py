@@ -72,10 +72,13 @@ def main():
                 print(f"    ⚠ {w}", flush=True)
 
         # ===== 质量门禁 =====
-        # 数据质量"不可靠"时跳过预测，避免输出大量估算值
-        if validation["quality"] == "不可靠":
-            print(f"  🚫 数据质量不可靠（{validation['score']}/100），跳过此场预测", flush=True)
-            print(f"    原因: {'; '.join(validation['warnings'])}", flush=True)
+        # 数据"不可靠"或 critical=True 时跳过，避免输出大量估算值
+        if validation["quality"] == "不可靠" or validation.get("critical"):
+            reason = "数据不可靠" if validation["quality"] == "不可靠" else "关键数据缺失"
+            print(f"  🚫 质量门禁触发（{reason}），跳过此场预测", flush=True)
+            print(f"    可信度: {validation['score']}/100", flush=True)
+            if validation.get("warnings"):
+                print(f"    原因: {'; '.join(validation['warnings'][:3])}", flush=True)
             continue
 
         # 预测
