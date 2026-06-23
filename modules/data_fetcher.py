@@ -746,4 +746,21 @@ def fetch_past_results():
 
 
 def fetch_injuries(team_name):
+    """获取伤病/停赛信息。从手动维护的 data/injuries.json 读取。"""
+    import json
+    inj_path = os.path.join(os.path.dirname(__file__), "..", "data", "injuries.json")
+    try:
+        if os.path.exists(inj_path):
+            with open(inj_path) as f:
+                data = json.load(f)
+            team_injuries = data.get("injuries", {}).get(team_name, [])
+            if team_injuries:
+                return {
+                    "team": team_name,
+                    "cn_name": cn(team_name),
+                    "injuries": team_injuries,
+                    "source": "manual",
+                }
+    except Exception:
+        pass
     return {"team": team_name, "cn_name": cn(team_name), "injuries": [], "source": "unavailable"}

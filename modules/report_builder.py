@@ -82,8 +82,46 @@ footer{{text-align:center;padding:30px;color:var(--muted);font-size:11px;border-
 <div class="val">#{a.get('rank','?')} · 主场场均进{a.get('home',{}).get('avg_goals_for','?')}/失{a.get('home',{}).get('avg_goals_against','?')}</div></div>
 <div class="data-item"><div class="label">🏅 {p['team_b']} · 世界排名 & 客场数据</div>
 <div class="val">#{b.get('rank','?')} · 客场场均进{b.get('away',{}).get('avg_goals_for','?')}/失{b.get('away',{}).get('avg_goals_against','?')}</div></div>
-</div>
-<div class="section-title">🤖 AI 多角度分析</div>
+</div>"""
+
+        # ===== 阵容展示 =====
+        sq_a = p.get("squad_a", {})
+        sq_b = p.get("squad_b", {})
+        has_squad = (
+            sq_a.get("source") not in (None, "unavailable")
+            and sq_b.get("source") not in (None, "unavailable")
+            and sq_a.get("players") and sq_b.get("players")
+        )
+        if has_squad:
+            from modules.squad_fetcher import get_key_players
+            key_a = get_key_players(sq_a, 5)
+            key_b = get_key_players(sq_b, 5)
+            ssi_a = sq_a.get("ssi", "?")
+            ssi_b = sq_b.get("ssi", "?")
+            avg_a = sq_a.get("squad_meta", {}).get("avg_age", "?")
+            avg_b = sq_b.get("squad_meta", {}).get("avg_age", "?")
+
+            def _ptags(plist):
+                return " · ".join([
+                    f"{p['name']}({p.get('position_cn', p.get('position',''))})"
+                    for p in plist[:5]
+                ])
+
+            html += f"""<div class="section-title">🧑 球队阵容</div>
+<div class="data-grid">
+<div class="data-item"><div class="label">{p['team_a']} · 核心球员 (SSI:{ssi_a}/100, 均龄{avg_a}岁)</div>
+<div class="val" style="font-size:12px">{_ptags(key_a)}</div></div>
+<div class="data-item"><div class="label">{p['team_b']} · 核心球员 (SSI:{ssi_b}/100, 均龄{avg_b}岁)</div>
+<div class="val" style="font-size:12px">{_ptags(key_b)}</div></div>
+</div>"""
+
+            for side, sq_data, tname in [(p['team_a'], sq_a, p['team_a']), (p['team_b'], sq_b, p['team_b'])]:
+                injuries = sq_data.get("injuries") or []
+                if injuries:
+                    inj_text = " · ".join([f"{i.get('player','?')}({i.get('status','?')})" for i in injuries])
+                    html += f'<div class="warn">⚠ {tname} 伤病: {inj_text}</div>'
+
+        html += f"""<div class="section-title">🤖 AI 多角度分析</div>
 <div class="ai-block">
 <div class="row"><strong>战术预判：</strong>{ai.get('tactics',ai.get('style','分析中'))}</div>
 <div class="row"><strong>核心对决：</strong>{ai.get('key_duel',ai.get('key_factor','分析中'))}</div>

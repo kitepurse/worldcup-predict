@@ -11,6 +11,7 @@ from modules.predictor import predict_match, predict_match_backfill
 from modules.tracker import save_prediction, generate_accuracy_table, find_gaps
 from modules.report_builder import build_report
 from modules.mail_sender import send_report
+from modules.squad_fetcher import fetch_squad, get_key_players, squad_coverage_summary
 
 
 def main():
@@ -48,6 +49,23 @@ def main():
     if unmapped:
         print(f"  ⚠ 队名映射缺失: {', '.join(unmapped)}，请补充到 CN_NAMES", flush=True)
 
+    # 3.5. 预先拉取所有涉及球队的阵容（缓存30天，第二天起全量命中）
+    all_teams = set()
+    for m in matches:
+        all_teams.add(m["home"]); all_teams.add(m["away"])
+    print(f"\n👥 获取球队阵容 ({len(all_teams)}队)...", flush=True)
+    squads = {}
+    for team in all_teams:
+        sq = fetch_squad(team)
+        # 合并伤病数据
+        inj = fetch_injuries(team)
+        if inj.get("injuries"):
+            sq["injuries"] = inj["injuries"]
+        squads[team] = sq
+    cov = squad_coverage_summary(squads)
+    print(f"  阵容覆盖: {cov['teams_with_squad']}/{cov['teams_total']} | "
+          f"API:{cov['sources']['api']} 缓存:{cov['sources']['cache']} 不可用:{cov['sources']['unavailable']}", flush=True)
+
     # 4. 逐场分析
     predictions = []
     for m in matches:
@@ -81,8 +99,12 @@ def main():
                 print(f"    原因: {'; '.join(validation['warnings'][:3])}", flush=True)
             continue
 
-        # 预测
-        result = predict_match(home, away, stats_h, stats_a, h2h)
+        # 预测（传入阵容数据）
+        match_squads = {
+            home: squads.get(home, {}),
+            away: squads.get(away, {}),
+        }
+        result = predict_match(home, away, stats_h, stats_a, h2h, squads=match_squads)
         result["team_a"] = home_cn
         result["team_b"] = away_cn
         result["team_a_en"] = home
@@ -93,6 +115,8 @@ def main():
         result["stats_a"] = stats_h
         result["stats_b"] = stats_a
         result["h2h"] = h2h
+        result["squad_a"] = squads.get(home, {})
+        result["squad_b"] = squads.get(away, {})
         result["validation"] = validation
         result["critical"] = validation.get("critical", False)
         # 低质量数据：降低预测置信度
