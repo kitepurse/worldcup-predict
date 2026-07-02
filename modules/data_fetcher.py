@@ -36,6 +36,14 @@ CN_NAMES = {
     "Czech Republic": "捷克", "Bosnia": "波黑", "Haiti": "海地",
     "Congo DR": "民主刚果", "Uzbekistan": "乌兹别克斯坦", "South Africa": "南非",
     "Curacao": "库拉索",
+    # API别名（淘汰赛阶段football-data.org使用不同命名）
+    "United States": "美国",
+    "Bosnia-Herzegovina": "波黑",
+    "Côte d'Ivoire": "科特迪瓦",
+    "Czechia": "捷克",
+    "Korea Republic": "韩国",
+    "IR Iran": "伊朗",
+    "Cabo Verde": "佛得角",
 }
 
 # FALLBACK: 基于各队2025-2026预选赛/友谊赛真实数据的攻防能力

@@ -1,0 +1,823 @@
+{
+  "date": "2026-06-23",
+  "predictions": [
+    {
+      "team_a": "阿根廷",
+      "team_b": "奥地利",
+      "data_driven": {
+        "xg_a": 3.18,
+        "xg_b": 0.76,
+        "elo_a": 2098,
+        "elo_b": 1798,
+        "elo_gap": 300,
+        "elo_source": "real_elo",
+        "h2h_bonus": 0,
+        "top3": [
+          {
+            "score": "2:0",
+            "prob": 38,
+            "reason": "Elo+Poisson xG=3.2:0.8"
+          },
+          {
+            "score": "3:1",
+            "prob": 32,
+            "reason": "Elo+Poisson xG=3.2:0.8"
+          },
+          {
+            "score": "3:0",
+            "prob": 31,
+            "reason": "Elo+Poisson xG=3.2:0.8"
+          }
+        ],
+        "score": 0.808,
+        "reason": "Elo(real_elo): 2098 vs 1798 (差300) | xG 3.18:0.76"
+      },
+      "ai_analysis": {
+        "style": "阿根廷主导控球，奥地利稳守反击",
+        "tactics": "阿根廷预计排出4-3-3阵型，利用边路突破和中路渗透结合，控球率超过60%，比赛节奏较快；奥地利可能采用4-4-2或5-3-2防守阵型，压缩空间，依靠长传找锋线高点发动反击。",
+        "key_duel": "阿根廷锋线三叉戟与奥地利中卫组合的对抗，尤其是阿根廷核心球员的个人能力能否撕开对方密集防线；中场方面，阿根廷的控球组织与奥地利的拦截抢断将决定球权转换效率。",
+        "key_factor": "阿根廷能否尽早破局打破奥地利的防守计划，否则比赛可能陷入胶着；奥地利定位球进攻可能是其主要得分手段。",
+        "risk": "阿根廷久攻不下可能产生急躁情绪，后防压上易被反击偷袭；奥地利若先得分则会全线退守；世界杯首战双方可能较为谨慎，红黄牌或意外伤病会影响比赛走向。",
+        "score_range": "2-0至3-1",
+        "top3": [
+          {
+            "score": "2:0",
+            "prob": 38,
+            "reason": "阿根廷实力占优，奥地利防守虽顽强但难以完全限制阿根廷的持续进攻，泊松模型显示概率最高"
+          },
+          {
+            "score": "3:1",
+            "prob": 32,
+            "reason": "阿根廷攻击力强劲，奥地利可能利用反击或定位球扳回一球，但仍难阻失利"
+          },
+          {
+            "score": "3:0",
+            "prob": 31,
+            "reason": "若阿根廷早早进球，奥地利被迫压出后将暴露更多空当，阿根廷可能取得完胜"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "2:0",
+            "prob": 43,
+            "reason": "阿根廷实力占优，奥地利防守虽顽强但难以完全限制阿根廷的持续进攻，泊松模型显示概率最高"
+          },
+          {
+            "score": "3:1",
+            "prob": 33,
+            "reason": "阿根廷攻击力强劲，奥地利可能利用反击或定位球扳回一球，但仍难阻失利"
+          },
+          {
+            "score": "3:0",
+            "prob": 29,
+            "reason": "若阿根廷早早进球，奥地利被迫压出后将暴露更多空当，阿根廷可能取得完胜"
+          }
+        ],
+        "note": "波动修正(Elo差300)"
+      },
+      "final_predictions": [
+        {
+          "score": "2:0",
+          "prob": 38,
+          "reason": "Poisson xG=3.2:0.8"
+        },
+        {
+          "score": "3:1",
+          "prob": 33,
+          "reason": "Poisson xG=3.2:0.8"
+        },
+        {
+          "score": "3:0",
+          "prob": 29,
+          "reason": "Poisson xG=3.2:0.8"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "Argentina",
+      "team_b_en": "Austria",
+      "match_date": "2026-06-23T01:00:00+08:00",
+      "date_display": "01:00 北京时间",
+      "stage": "J组第1轮",
+      "stats_a": {
+        "name": "Argentina",
+        "cn_name": "阿根廷",
+        "rank": 1,
+        "confederation": "南美",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 0.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Austria",
+        "cn_name": "奥地利",
+        "rank": 25,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 1.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Argentina",
+        "team_b": "Austria",
+        "total": 3,
+        "wins_a": 1,
+        "wins_b": 1,
+        "draws": 1,
+        "matches": [],
+        "source": "estimate(conf+rank)"
+      },
+      "validation": {
+        "score": 94,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 为有依据估算（非真实比赛数据）"
+        ],
+        "details": {
+          "Argentina": "真实API数据 (football-data.org)",
+          "Austria": "真实API数据 (football-data.org)"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "estimate(conf+rank)"
+        },
+        "checked_at": "2026-06-22T18:08:12.291911"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "法国",
+      "team_b": "伊拉克",
+      "data_driven": {
+        "xg_a": 4.5,
+        "xg_b": 0.5,
+        "elo_a": 2098,
+        "elo_b": 1590,
+        "elo_gap": 508,
+        "elo_source": "real_elo",
+        "h2h_bonus": 40,
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 36,
+            "reason": "Elo+Poisson xG=4.5:0.5"
+          },
+          {
+            "score": "4:0",
+            "prob": 34,
+            "reason": "Elo+Poisson xG=4.5:0.5"
+          },
+          {
+            "score": "4:1",
+            "prob": 29,
+            "reason": "Elo+Poisson xG=4.5:0.5"
+          }
+        ],
+        "score": 0.933,
+        "reason": "Elo(real_elo): 2098 vs 1590 (差508) | xG 4.5:0.5"
+      },
+      "ai_analysis": {
+        "style": "法国将主导控球并发动持续的高位压迫，利用边中结合的多样化进攻撕裂伊拉克的密集防守；伊拉克则会全面收缩摆出541铁桶阵，寻求零星的反击机会，比赛节奏完全由法国掌控。",
+        "tactics": "法国预计采用4-3-3阵型，格列兹曼回撤组织，姆巴佩与登贝莱利用速度冲击边路，通过快速传递和定位球制造杀机。伊拉克大概率排出5-4-1阵型，防线极度收缩，依靠双后腰对禁区前沿的保护，尝试通过长传直接找单前锋来缓解压力，但控球率可能不足三成。",
+        "key_duel": "姆巴佩vs伊拉克右路防区：姆巴佩的爆发力和无球跑动将对阵伊拉克经验不足的边后卫，一旦形成一对一，极有可能通过突破或造犯规打开缺口，这是法国最直接的破局手段。",
+        "key_factor": "破局时间：如果法国能在前30分钟取得进球，伊拉克将被迫阵型前移，从而暴露更多身后空间，比赛很可能演变为一场大胜；若上半场颗粒无收，伊拉克的防守信心提升，可能将悬念拖入下半场后段。",
+        "risk": "法国队可能存在轻敌心态，久攻不下时容易急躁，给伊拉克利用定位球或反击偷袭的机会。此外，法国中后场在由攻转守时的空当若被伊拉克抓住，可能通过远射或转换进攻制造意外。主裁判的尺度以及对伊拉克密集犯规的反应，也可能影响比赛流畅度。",
+        "score_range": "3:0/4:0/5:0",
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 36,
+            "reason": "泊松分布最高概率比分，符合两队Elo差距508下至少3球差距的强制规则。法国攻击线实力碾压，但伊拉克极致防守可能造成初期僵持，法国打出3球零封是理性预期。"
+          },
+          {
+            "score": "4:0",
+            "prob": 34,
+            "reason": "伊拉克防线在下半场体能下降后容易连续丢球，法国替补深度优势明显，若姆巴佩等核心球员状态在线，扩大至4球非常自然。"
+          },
+          {
+            "score": "4:1",
+            "prob": 15,
+            "reason": "伊拉克可能在比赛末段通过定位球或远射取得安慰性进球，法国依然净胜3球，仍满足Elo>400的TOP1至少3球规则。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "3:0",
+            "prob": 41,
+            "reason": "泊松分布最高概率比分，符合两队Elo差距508下至少3球差距的强制规则。法国攻击线实力碾压，但伊拉克极致防守可能造成初期僵持，法国打出3球零封是理性预期。"
+          },
+          {
+            "score": "4:0",
+            "prob": 35,
+            "reason": "伊拉克防线在下半场体能下降后容易连续丢球，法国替补深度优势明显，若姆巴佩等核心球员状态在线，扩大至4球非常自然。"
+          },
+          {
+            "score": "4:1",
+            "prob": 13,
+            "reason": "伊拉克可能在比赛末段通过定位球或远射取得安慰性进球，法国依然净胜3球，仍满足Elo>400的TOP1至少3球规则。"
+          }
+        ],
+        "note": "波动修正(Elo差508)"
+      },
+      "final_predictions": [
+        {
+          "score": "3:0",
+          "prob": 37,
+          "reason": "Poisson xG=4.5:0.5"
+        },
+        {
+          "score": "4:0",
+          "prob": 37,
+          "reason": "Poisson xG=4.5:0.5"
+        },
+        {
+          "score": "4:1",
+          "prob": 26,
+          "reason": "Poisson xG=4.5:0.5"
+        }
+      ],
+      "confidence": "高",
+      "team_a_en": "France",
+      "team_b_en": "Iraq",
+      "match_date": "2026-06-23T05:00:00+08:00",
+      "date_display": "05:00 北京时间",
+      "stage": "I组第1轮",
+      "stats_a": {
+        "name": "France",
+        "cn_name": "法国",
+        "rank": 2,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 3.0,
+          "avg_goals_against": 1.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Iraq",
+        "cn_name": "伊拉克",
+        "rank": 56,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 4.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "France",
+        "team_b": "Iraq",
+        "total": 3,
+        "wins_a": 3,
+        "wins_b": 0,
+        "draws": 0,
+        "matches": [],
+        "source": "estimate(conf+rank)"
+      },
+      "validation": {
+        "score": 94,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 为有依据估算（非真实比赛数据）"
+        ],
+        "details": {
+          "France": "真实API数据 (football-data.org)",
+          "Iraq": "真实API数据 (football-data.org)"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "estimate(conf+rank)"
+        },
+        "checked_at": "2026-06-22T18:09:07.076565"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "挪威",
+      "team_b": "塞内加尔",
+      "data_driven": {
+        "xg_a": 0.97,
+        "xg_b": 2.03,
+        "elo_a": 1750,
+        "elo_b": 1828,
+        "elo_gap": 78,
+        "elo_source": "real_elo",
+        "h2h_bonus": 0,
+        "top3": [
+          {
+            "score": "0:2",
+            "prob": 34,
+            "reason": "Elo+Poisson xG=1.0:2.0"
+          },
+          {
+            "score": "0:1",
+            "prob": 33,
+            "reason": "Elo+Poisson xG=1.0:2.0"
+          },
+          {
+            "score": "1:2",
+            "prob": 33,
+            "reason": "Elo+Poisson xG=1.0:2.0"
+          }
+        ],
+        "score": 0.324,
+        "reason": "Elo(real_elo): 1750 vs 1828 (差78) | xG 0.97:2.03"
+      },
+      "ai_analysis": {
+        "style": "塞内加尔将主导控球，利用边路速度和身体对抗冲击挪威防线；挪威侧重收缩防守、寻求快速转换，依赖定位球与高空作业制造威胁。比赛节奏预计偏快，但塞内加尔会试图通过中场压制控制节奏。",
+        "tactics": "挪威可能采用4-4-2或4-2-3-1阵型，防守时两翼回撤形成紧凑4-4防线，进攻主要从边路起球找高中锋，并利用二点球争抢。塞内加尔预计排出4-3-3，中场三人组负责绞杀与推进，锋线依靠速度型边锋内切和中路穿插，边后卫积极套上形成人数优势。塞内加尔的压迫强度将迫使挪威后场出球困难，转化为多次前场反击机会。",
+        "key_duel": "挪威中卫组合 vs 塞内加尔锋线速度——挪威高大防线的转身速度劣势很可能被塞内加尔的快速纵向冲击直接暴露，尤其边路1对1突破和中路直塞将考验回追能力。中场控制权——塞内加尔双核的覆盖和对抗能力优于挪威，若能切断挪威中路与锋线的联系，将完全掌控比赛节奏。",
+        "key_factor": "塞内加尔前场三叉戟的个人能力是打破平衡的关键，只要在20-30米区域获得1v1机会，极可能创造进球。挪威的定位球是最大变数，身高优势可能在高空球混战中意外得分，但需要先顶住前60分钟的持续压力。",
+        "risk": "挪威的门将和防线在高压下可能出现出球失误导致丢球；塞内加尔若久攻不下心态急躁，黄牌累积会影响防守纪律；比赛在中立场地进行，气候条件对非洲球队更友好，但西非球员在欧洲踢球的比例高，适应性强；若挪威早早通过定位球得分，比赛将转入他们擅长的稳守反击模式，形势可能逆转。",
+        "score_range": "0:1-0:2",
+        "top3": [
+          {
+            "score": "0:2",
+            "prob": 32,
+            "reason": "塞内加尔整体实力与Elo评分均占优，xG模型显示预期进球超过2球，挪威进攻输出有限，塞内加尔在持续压迫下有望通过快速反击和边路撕开防线，打进两球并零封对手。"
+          },
+          {
+            "score": "0:1",
+            "prob": 30,
+            "reason": "塞内加尔依靠一次高质量反击或定位球拿下比赛，挪威顽强防守可能将差距控制在一球，而自身进攻难以穿透塞内加尔的防线，最终小比分落败。"
+          },
+          {
+            "score": "1:2",
+            "prob": 25,
+            "reason": "若挪威利用定位球或高空球扳回一城，塞内加尔仍能凭借更强的运动战能力再入一球锁定胜局，此比分反映双方实力差距且符合泊松分布趋势。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:2",
+            "prob": 30,
+            "reason": "塞内加尔整体实力与Elo评分均占优，xG模型显示预期进球超过2球，挪威进攻输出有限，塞内加尔在持续压迫下有望通过快速反击和边路撕开防线，打进两球并零封对手。"
+          },
+          {
+            "score": "0:1",
+            "prob": 31,
+            "reason": "塞内加尔依靠一次高质量反击或定位球拿下比赛，挪威顽强防守可能将差距控制在一球，而自身进攻难以穿透塞内加尔的防线，最终小比分落败。"
+          },
+          {
+            "score": "1:2",
+            "prob": 25,
+            "reason": "若挪威利用定位球或高空球扳回一城，塞内加尔仍能凭借更强的运动战能力再入一球锁定胜局，此比分反映双方实力差距且符合泊松分布趋势。"
+          }
+        ],
+        "note": "波动修正(Elo差78)"
+      },
+      "final_predictions": [
+        {
+          "score": "0:2",
+          "prob": 35,
+          "reason": "Poisson xG=1.0:2.0"
+        },
+        {
+          "score": "0:1",
+          "prob": 35,
+          "reason": "Poisson xG=1.0:2.0"
+        },
+        {
+          "score": "1:2",
+          "prob": 30,
+          "reason": "Poisson xG=1.0:2.0"
+        }
+      ],
+      "confidence": "低",
+      "team_a_en": "Norway",
+      "team_b_en": "Senegal",
+      "match_date": "2026-06-23T08:00:00+08:00",
+      "date_display": "08:00 北京时间",
+      "stage": "I组第1轮",
+      "stats_a": {
+        "name": "Norway",
+        "cn_name": "挪威",
+        "rank": 37,
+        "confederation": "欧洲",
+        "last10": {
+          "wins": 1,
+          "draws": 0,
+          "losses": 0,
+          "avg_goals_for": 4.0,
+          "avg_goals_against": 1.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "W"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Senegal",
+        "cn_name": "塞内加尔",
+        "rank": 18,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 3.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Norway",
+        "team_b": "Senegal",
+        "total": 3,
+        "wins_a": 1,
+        "wins_b": 1,
+        "draws": 1,
+        "matches": [],
+        "source": "estimate(conf+rank)"
+      },
+      "validation": {
+        "score": 94,
+        "quality": "高",
+        "critical": false,
+        "warnings": [
+          "H2H 为有依据估算（非真实比赛数据）"
+        ],
+        "details": {
+          "Norway": "真实API数据 (football-data.org)",
+          "Senegal": "真实API数据 (football-data.org)"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "estimate(conf+rank)"
+        },
+        "checked_at": "2026-06-22T18:09:56.637784"
+      },
+      "critical": false,
+      "data_completeness": 100
+    },
+    {
+      "team_a": "约旦",
+      "team_b": "阿尔及利亚",
+      "data_driven": {
+        "xg_a": 0.93,
+        "xg_b": 2.2,
+        "elo_a": 1615,
+        "elo_b": 1715,
+        "elo_gap": 100,
+        "elo_source": "real_elo",
+        "h2h_bonus": 0,
+        "top3": [
+          {
+            "score": "0:2",
+            "prob": 35,
+            "reason": "Elo+Poisson xG=0.9:2.2"
+          },
+          {
+            "score": "1:2",
+            "prob": 33,
+            "reason": "Elo+Poisson xG=0.9:2.2"
+          },
+          {
+            "score": "0:1",
+            "prob": 32,
+            "reason": "Elo+Poisson xG=0.9:2.2"
+          }
+        ],
+        "score": 0.297,
+        "reason": "Elo(real_elo): 1615 vs 1715 (差100) | xG 0.93:2.2"
+      },
+      "ai_analysis": {
+        "style": "约旦偏向防守反击与长传冲吊，靠前锋个人能力偷袭；阿尔及利亚控球能力更强，善于边路渗透与阵地战压迫，整体节奏由阿尔及利亚掌控，但破密集防守效率将决定开放程度。",
+        "tactics": "约旦预计排出5-4-1或4-5-1阵型，收缩防线，力求压缩空间，进攻依赖定位球和快速转换。阿尔及利亚可能以4-3-3或4-2-3-1阵型控场，利用边锋速度和中场直塞撕开防线。比赛可能呈现半场攻防演练，阿尔及利亚掌握七成以上控球权，约旦伺机抓反击。",
+        "key_duel": "阿尔及利亚边锋组合 vs 约旦边后卫及协防中场。约旦两翼防守相对脆弱，若阿尔及利亚能频繁在边路形成突破或倒三角传中，将创造大量杀机。约旦中锋与阿尔及利亚中卫的空中对抗也是定位球变数。",
+        "key_factor": "阿尔及利亚的破局速度。如果前30分钟取得进球，约旦被迫压出，阿尔及利亚有机会扩大比分；若半场闷平，约旦信心提升，反击威胁增大，阿尔及利亚可能陷入急躁。",
+        "risk": "约旦门将如有超常发挥可能推迟失球；阿尔及利亚近期终结能力不稳定，存在久攻不下被偷反击的可能；西亚气候与裁判尺度对非洲球队的适应；最后时刻的体能下降与黄牌停赛隐患。",
+        "score_range": "0:2/0:1/1:2",
+        "top3": [
+          {
+            "score": "0:2",
+            "prob": 35,
+            "reason": "阿尔及利亚整体实力与Elo优势明显，控场后逐步消耗约旦防线，两球完胜符合泊松分布最大概率，且历史交锋差距不大但近况实力更优。"
+          },
+          {
+            "score": "1:2",
+            "prob": 33,
+            "reason": "阿尔及利亚防守偶有松懈，约旦可能利用定位球或反击扳回一球，但阿尔及利亚仍能凭进攻火力打入两球取胜。"
+          },
+          {
+            "score": "0:1",
+            "prob": 32,
+            "reason": "若阿尔及利亚进攻效率一般，可能仅以1球小胜，约旦全线退守会让比赛胶着，一球定乾坤。"
+          }
+        ]
+      },
+      "volatility": {
+        "top3": [
+          {
+            "score": "0:2",
+            "prob": 33,
+            "reason": "阿尔及利亚整体实力与Elo优势明显，控场后逐步消耗约旦防线，两球完胜符合泊松分布最大概率，且历史交锋差距不大但近况实力更优。"
+          },
+          {
+            "score": "1:2",
+            "prob": 34,
+            "reason": "阿尔及利亚防守偶有松懈，约旦可能利用定位球或反击扳回一球，但阿尔及利亚仍能凭进攻火力打入两球取胜。"
+          },
+          {
+            "score": "0:1",
+            "prob": 25,
+            "reason": "若阿尔及利亚进攻效率一般，可能仅以1球小胜，约旦全线退守会让比赛胶着，一球定乾坤。"
+          }
+        ],
+        "note": "波动修正(Elo差100)"
+      },
+      "final_predictions": [
+        {
+          "score": "0:2",
+          "prob": 35,
+          "reason": "Poisson xG=0.9:2.2"
+        },
+        {
+          "score": "1:2",
+          "prob": 35,
+          "reason": "Poisson xG=0.9:2.2"
+        },
+        {
+          "score": "0:1",
+          "prob": 30,
+          "reason": "Poisson xG=0.9:2.2"
+        }
+      ],
+      "confidence": "低",
+      "team_a_en": "Jordan",
+      "team_b_en": "Algeria",
+      "match_date": "2026-06-23T11:00:00+08:00",
+      "date_display": "11:00 北京时间",
+      "stage": "J组第1轮",
+      "stats_a": {
+        "name": "Jordan",
+        "cn_name": "约旦",
+        "rank": 59,
+        "confederation": "亚洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 1.0,
+          "avg_goals_against": 3.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "stats_b": {
+        "name": "Algeria",
+        "cn_name": "阿尔及利亚",
+        "rank": 34,
+        "confederation": "非洲",
+        "last10": {
+          "wins": 0,
+          "draws": 0,
+          "losses": 1,
+          "avg_goals_for": 0.0,
+          "avg_goals_against": 3.0,
+          "source": "football-data.org"
+        },
+        "last30": {
+          "wins": null,
+          "draws": null,
+          "losses": null,
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "API仅提供近10场，近30场不可用"
+        },
+        "last5": {
+          "trend": "L"
+        },
+        "home": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，主场数据不适用"
+        },
+        "away": {
+          "avg_goals_for": null,
+          "avg_goals_against": null,
+          "note": "中立场地，客场数据不适用"
+        },
+        "source": "football-data.org",
+        "data_quality": "medium"
+      },
+      "h2h": {
+        "team_a": "Jordan",
+        "team_b": "Algeria",
+        "total": 3,
+        "wins_a": 1,
+        "wins_b": 1,
+        "draws": 1,
+        "matches": [],
+        "source": "estimate(conf+rank)"
+      },
+      "validation": {
+        "score": 64,
+        "quality": "中",
+        "critical": false,
+        "warnings": [
+          "Algeria 近10场数据缺失",
+          "H2H 为有依据估算（非真实比赛数据）"
+        ],
+        "details": {
+          "Jordan": "真实API数据 (football-data.org)",
+          "Algeria": "真实API数据 (football-data.org)"
+        },
+        "sources_used": {
+          "team_a": "football-data.org",
+          "team_b": "football-data.org",
+          "h2h": "estimate(conf+rank)"
+        },
+        "checked_at": "2026-06-22T18:10:54.495009"
+      },
+      "critical": false,
+      "data_completeness": 100
+    }
+  ],
+  "generated_at": "2026-06-22T18:11:10.984325"
+}
