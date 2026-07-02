@@ -3,6 +3,63 @@ import json, os, re, time, math
 from urllib.request import Request, urlopen
 
 # ============================================================
+# 权重配置（可调）
+# ============================================================
+WEIGHT_AI = 0.60         # AI推理
+WEIGHT_POISSON = 0.25    # Elo+泊松数据底盘
+WEIGHT_VOLATILITY = 0.15 # 波动修正
+
+# ============================================================
+# 世界杯赛事成绩查询
+# ============================================================
+
+def _get_tournament_form(team_name):
+    """获取球队在本届世界杯的已完赛成绩。
+    返回: {matches: [{opponent, score, result}], record: {wins,draws,losses,goals_for,goals_against}}
+    """
+    try:
+        from modules.tracker import load_results, _normalize
+        results = load_results()
+        matches = []
+        wins = draws = losses = 0
+        gf = ga = 0
+        for key, r in results.items():
+            home = _normalize(r['home'])
+            away = _normalize(r['away'])
+            if _normalize(team_name) == home or team_name == home:
+                opponent = away
+                hs, aws = r['score'].split(':')
+                my_score, opp_score = int(hs), int(aws)
+            elif _normalize(team_name) == away or team_name == away:
+                opponent = home
+                hs, aws = r['score'].split(':')
+                my_score, opp_score = int(aws), int(hs)
+            else:
+                continue
+            gf += my_score
+            ga += opp_score
+            if my_score > opp_score:
+                wins += 1; result = 'W'
+            elif my_score == opp_score:
+                draws += 1; result = 'D'
+            else:
+                losses += 1; result = 'L'
+            matches.append({
+                'opponent': opponent,
+                'score': f"{my_score}:{opp_score}",
+                'result': result
+            })
+        if matches:
+            return {
+                'matches': matches,
+                'record': {'wins': wins, 'draws': draws, 'losses': losses,
+                           'goals_for': gf, 'goals_against': ga, 'played': len(matches)},
+            }
+    except Exception:
+        pass
+    return None
+
+# ============================================================
 # Elo 评分体系 — 真实 Elo 优先，FIFA 排名换算兜底
 # ============================================================
 
@@ -171,6 +228,25 @@ def layer1_elo_poisson(stats_a, stats_b, h2h):
         elo_a += h2h_bonus
         elo_b -= h2h_bonus
 
+    # 世界杯赛事成绩修正（±60 分 — 实际表现比历史排名更重要）
+    tourn_bonus = 0
+    form_a = _get_tournament_form(team_a)
+    form_b = _get_tournament_form(team_b)
+    if form_a:
+        r = form_a['record']
+        # 胜率加分：每多赢1场 +15 Elo
+        tourn_bonus += (r['wins'] - r['losses']) * 15
+        # 净胜球加分：每多1个净胜球 +3 Elo
+        tourn_bonus += (r['goals_for'] - r['goals_against']) * 3
+    if form_b:
+        r = form_b['record']
+        tourn_bonus -= (r['wins'] - r['losses']) * 15
+        tourn_bonus -= (r['goals_for'] - r['goals_against']) * 3
+    # 限制范围，避免过度修正
+    tourn_bonus = max(-60, min(60, tourn_bonus))
+    elo_a += tourn_bonus // 2
+    elo_b -= tourn_bonus // 2
+
     xg_a, xg_b, elo_gap = _expected_goals(elo_a, elo_b, rank_a, rank_b)
     top3 = _poisson_top3(xg_a, xg_b)
 
@@ -208,6 +284,22 @@ def layer2_ai_analysis(team_a, team_b, stats_a, stats_b, h2h, data1, squads=None
     poisson_ref = ""
     if data1.get("top3"):
         poisson_ref = " | ".join([f"{x['score']}({x['prob']}%)" for x in data1["top3"]])
+
+    # ===== 世界杯赛事成绩 =====
+    form_a = _get_tournament_form(team_a)
+    form_b = _get_tournament_form(team_b)
+    tourney_section = ""
+    if form_a or form_b:
+        tourney_section = "\n### 本届世界杯已完赛成绩\n"
+        for cn_name, form, tname in [(cn_a, form_a, team_a), (cn_b, form_b, team_b)]:
+            if form:
+                r = form['record']
+                results_str = " ".join([f"{m['opponent']}{m['score']}({m['result']})" for m in form['matches'][-5:]])
+                tourney_section += (f"{cn_name}: {r['wins']}胜{r['draws']}平{r['losses']}负 "
+                                    f"进{r['goals_for']}失{r['goals_against']} | {results_str}\n")
+            else:
+                tourney_section += f"{cn_name}: 暂无比赛数据\n"
+        tourney_section += "\n"
 
     # ===== 阵容数据（如果有）=====
     squad_a = (squads or {}).get(team_a, {})
@@ -277,7 +369,7 @@ def layer2_ai_analysis(team_a, team_b, stats_a, stats_b, h2h, data1, squads=None
 
 ### 历史交锋
 {h2h}
-{squad_section}
+{tourney_section}{squad_section}
 ### Elo+泊松分布参考（数据模型）
 Elo评分: {cn_a} {data1.get('elo_a','?')} vs {cn_b} {data1.get('elo_b','?')} (差值{data1.get('elo_gap','?')})
 期望进球(xG): {cn_a} {data1.get('xg_a','?')} : {data1.get('xg_b','?')} {cn_b}
@@ -406,35 +498,53 @@ def layer3_volatility(ai_result, elo_gap=0):
 # ============================================================
 
 def predict_match(team_a, team_b, stats_a, stats_b, h2h, squads=None):
-    """综合预测：Elo+Poisson 60% + AI分析 30% + 波动修正 10%"""
+    """综合预测：AI推理 60% + Elo+Poisson 25% + 波动修正 15%"""
     # 第1层：Elo + Poisson
     data1 = layer1_elo_poisson(stats_a, stats_b, h2h)
 
     # 第2层：AI分析（传入 squad 数据）
     ai = layer2_ai_analysis(team_a, team_b, stats_a, stats_b, h2h, data1, squads=squads)
 
-    # 第3层：波动修正
-    vol = layer3_volatility(ai, data1.get("elo_gap", 0))
-
     # === 加权合并 ===
-    # Poisson 60% 定底盘，AI 30% 微调概率，AI不能改变Poisson的候选秩序
+    # AI为预测主导(60%)，Poisson提供数据底盘(25%)
     full_matrix = _score_matrix(data1["xg_a"], data1["xg_b"])
-    candidate_pool = {x["score"]: x["prob"] for x in full_matrix[:8]}  # TOP8候选池
+    candidate_pool = {x["score"]: x["prob"] for x in full_matrix[:10]}  # TOP10候选池
 
-    # AI概率映射（仅当AI选的比分在Poisson候选池内才采纳）
+    # AI概率映射
     ai_map = {}
-    for item in vol.get("top3", []):
+    for item in ai.get("top3", []):
         score = item["score"]
         if score in candidate_pool:
             ai_map[score] = item["prob"]
+        else:
+            # AI提出Poisson没覆盖的比分 → 加入候选池
+            candidate_pool[score] = 5  # 低基础分
 
-    # 合并：基础分=Poisson概率(60%)，AI加分=AI概率×0.15（AI只能微调不能改变顺序）
+    # 第3层：波动修正（基于Elo差距调整AI概率）
+    elo_gap = data1.get("elo_gap", 0)
+    vol_adjusted = {}
+    for score, ai_prob in ai_map.items():
+        adjusted = ai_prob
+        if elo_gap > 200:
+            # 悬殊：AI首选加5%，冷门减3%
+            if ai_prob == max(ai_map.values()):
+                adjusted += 5
+            else:
+                adjusted -= 3
+        elif elo_gap < 50:
+            # 接近：AI首选减3%（不确定性大）
+            if ai_prob == max(ai_map.values()):
+                adjusted -= 3
+        vol_adjusted[score] = max(5, min(65, adjusted))
+
+    # 加权合并：AI(60%) + Poisson(25%)
     merged = {}
     for score, pp in candidate_pool.items():
-        ai_bonus = ai_map.get(score, 0) * 0.05
+        ai_weighted = vol_adjusted.get(score, 0) * WEIGHT_AI
+        poisson_weighted = pp * WEIGHT_POISSON
         merged[score] = {
-            "prob": round(pp * 0.60 + ai_bonus),
-            "reason": f"Poisson xG={data1['xg_a']:.1f}:{data1['xg_b']:.1f}",
+            "prob": round(ai_weighted + poisson_weighted),
+            "reason": f"AI+Poisson xG={data1['xg_a']:.1f}:{data1['xg_b']:.1f}",
         }
 
     # 排序取TOP3
@@ -467,14 +577,17 @@ def predict_match(team_a, team_b, stats_a, stats_b, h2h, squads=None):
         "team_a": team_a, "team_b": team_b,
         "data_driven": data1,
         "ai_analysis": ai,
-        "volatility": vol,
+        "volatility": {"top3": [{"score": s, "prob": vol_adjusted.get(s, 0)} for s, _ in top3],
+                       "note": f"波动修正(Elo差{elo_gap}, 权重{WEIGHT_VOLATILITY*100:.0f}%)"},
+        "tournament": {"team_a": _get_tournament_form(team_a), "team_b": _get_tournament_form(team_b)},
+        "weights": {"ai": WEIGHT_AI, "poisson": WEIGHT_POISSON, "volatility": WEIGHT_VOLATILITY},
         "final_predictions": final,
         "confidence": confidence,
     }
 
 
 def predict_match_backfill(team_a, team_b, stats_a, stats_b, h2h):
-    """回填预测：仅 Elo + Poisson，不调用AI"""
+    """回填预测：Elo + Poisson 纯数据驱动，不调用AI"""
     data1 = layer1_elo_poisson(stats_a, stats_b, h2h)
     top3 = data1.get("top3", [])
 
